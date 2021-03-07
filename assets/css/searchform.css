@@ -16,3 +16,6 @@
 .recipe-input {
 	margin-bottom: 1rem;
 }
+.card-text img {
+	max-width: 25%;
+}
