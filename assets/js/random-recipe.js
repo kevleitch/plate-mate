@@ -1,4 +1,4 @@
-Vue.component('recipesearchresults', {
+Vue.component('randomrecipe', {
 	props: ['results'],
 	template: `
 		<section>
@@ -16,19 +16,21 @@ Vue.component('recipesearchresults', {
 	`
 })
 
-const vm = new Vue({
-	el: '#recipesearch-app',
+const rr = new Vue({
+	el: '#randomrecipe-app',
 	data: {
 		results: [],
-		searchrecipe: ''
 	},
 	methods: {
-		recipesearch:function() {
-			axios.get("https://www.themealdb.com/api/json/v1/1/search.php?s="+this.searchrecipe)
+		randomrec:function() {
+			axios.get("https://www.themealdb.com/api/json/v1/1/random.php")
 			.then(response => {
 				this.results = response.data.meals;
 				console.log(response);
 			})
 		}
-	}
+	},
+	created: function(){
+        this.randomrec()
+    }
 });
