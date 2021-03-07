@@ -3,7 +3,7 @@
 	padding-left: 0;
 }
 .jumbotron {
-	background: url('../img/jt.png') no-repeat top center;
+	background: url('https://kevleitch.github.io/plate-mate/assets/img/jt.png') no-repeat top center;
 	background-size: cover;
 	background-size:contain;
 	padding-top: 30%;
