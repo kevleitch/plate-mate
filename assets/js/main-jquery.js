@@ -7,4 +7,7 @@ $(document).ready(function(){
 		$('#search-form').addClass('hide-search').removeClass('show-search');
 		e.preventDefault();
 	})
+	$('#searchsub').click(function() {
+		$('#randomrecipe-app').hide();
+	})
 });
