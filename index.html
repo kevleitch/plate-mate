@@ -12,9 +12,13 @@
 </head>
 <body>
 	<div class="container container-main">
-		<div class="main-nav">
-			<a class="navbar-brand" href="#"><img src="assets/img/small-logo.png" alt="PlateMate logo" /></a>
-			<a class="show-search-form btn btn-success btn-sm" role="button" href="#">Show Search</a>
+		<div class="row">
+			<div class="col-12">
+				<div class="main-nav">
+					<a class="navbar-brand" href="#"><img src="assets/img/small-logo.png" alt="PlateMate logo" /></a>
+					<a class="show-search-form btn btn-success btn-sm" role="button" href="#">Show Search</a>
+				</div>
+			</div>
 		</div>
 		<div class="container" id="recipesearch-app">
 			<div class="row hide-search" id="search-form">
@@ -36,11 +40,6 @@
 		</div>
 		<div class="container" id="randomrecipe-app">
 			<randomrecipe :results="results"></randomrecipe>
-		</div>
-	</div>
-	<div class="footer row">
-		<div class="col-12">
-			<p class="built-with text-center"><small>Built with <a href="https://vuejs.org/" target="_blank">Vue</a>, <a href="https://github.com/axios/axios" target="_blank">Axios</a> and <a href="https://getbootstrap.com/" target="_blank">Bootstrap</a>. API from <a href="https://www.themealdb.com/api.php" target="_blank">The Meal DB </a></small></p>
 		</div>
 	</div>
 	<script src="https://unpkg.com/vue@2.6.12/dist/vue.js"></script>

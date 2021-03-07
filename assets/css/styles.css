@@ -1,6 +1,7 @@
-.container-main {
-	padding-right: 0;
-	padding-left: 0;
+.main-nav {
+	margin-top: 1rem;
+	background-color: #eee;
+	padding: 1rem;
 }
 .jumbotron {
 	background: url('../img/jt.png') no-repeat top center;
@@ -8,6 +9,4 @@
 	background-size:contain;
 	padding-top: 30%;
 	padding-bottom: 15%;
-	position: relative;
-	top: 10px;
 }

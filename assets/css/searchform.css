@@ -2,7 +2,6 @@
 	padding: 1rem;
 	background-color: #eee;
 	margin-bottom: 1rem;
-	margin-top: 3rem;
 	border-bottom-left-radius: 10px;
 	border-bottom-right-radius: 10px;
 	border: 1px solid #ccc;
@@ -14,7 +13,8 @@
 .hide-search {
 	display: none;
 }
-a.hide-search-form {
+a.hide-search-form,
+a.show-search-form {
 	float: right;
 }
 .recipe-input {
