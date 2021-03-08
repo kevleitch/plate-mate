@@ -1,12 +1,28 @@
-.main-nav {
+body {
+	background-color: #F8F9FA;
+}
+nav {
+	background-color: #fff;
+	border-bottom: 1px solid #eee;
+}
+.container-main {
+	margin-top: 2rem;
+}
+.card {
+	padding: 2rem;
+	font-family: 'Dosis', sans-serif;
+	font-size: 1rem;
+}
+h1, h2, h3, h4 {
+	font-family: 'Merriweather', serif;
+}
+h4 {
 	margin-top: 1rem;
-	background-color: #eee;
-	padding: 1rem;
+	font-size: 1.5rem;
 }
-.jumbotron {
-	background: url('../img/jt.png') no-repeat top center;
-	background-size: cover;
-	background-size:contain;
-	padding-top: 30%;
-	padding-bottom: 15%;
-}
+h5 {
+	font-family: 'Dosis', sans-serif;
+	font-size: 1rem;
+	margin-top: 1rem;
+	font-weight: bold;
+	

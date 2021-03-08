@@ -1,0 +1,26 @@
+.card-text img {
+	max-width: 100%;
+}
+#recipethumb,
+#recipedetails {
+	float: left;
+}
+#recipethumb {
+	width: 25%;
+}
+#recipedetails {
+	margin-left: 4rem;
+	width: 50%;
+}
+#recipedetails ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+#recipedetails ul li {
+	text-transform: capitalize;
+	padding: 4px 6px;
+}
+#recipedetails ul > li:nth-of-type(odd) {
+    background-color: #F8F9FA;
+}
