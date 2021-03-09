@@ -28,3 +28,8 @@
 #recipedetails ul > li:nth-of-type(odd) {
     background-color: #F8F9FA;
 }
+#bookmark {
+	position: absolute;
+    top: 0;
+    right: 1rem;
+}
