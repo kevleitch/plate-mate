@@ -8,6 +8,10 @@
 #recipethumb {
 	width: 25%;
 }
+#recipethumb img {
+	padding: 5px;
+	border: 1px solid #eee;
+}
 #recipedetails {
 	margin-left: 4rem;
 	width: 50%;

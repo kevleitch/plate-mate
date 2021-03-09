@@ -4,11 +4,20 @@ Vue.component('recipesearchresults', {
 		<section>
 			<div class="" v-for="result in results">
 				<div class="card">
-					<div class="card-title">
-						<h3>{{ result.strMeal }}</h3>
-					</div>
 					<div class="card-text">
-						<img :src="result.strMealThumb" />
+						<div id="recipethumb">
+							<img :src="result.strMealThumb" />
+						</div>
+						<div id="recipedetails">
+							<h4>{{ result.strMeal }}</h4>
+							<h5>Category: {{ result.strCategory }}</h5>
+							<h5 v-if="result.strTags" id="tags">Tags: {{ result.strTags }}</h5>
+							<h5 v-if="result.strArea" id="area">Area recipe is from: {{ result.strArea }}</h5>
+							<form v-on:submit.prevent="getrecipe">
+								<input type="hidden" name="recipeid" v-model="result.idMeal" /> 
+								<button type="button" class="btn btn-outline-info btn-lg">Get Recipe</button>
+							</form>
+						</div>
 					</div>
 				</div>
 			</div>
