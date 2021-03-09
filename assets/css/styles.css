@@ -26,4 +26,11 @@ h5 {
 	font-size: 1rem;
 	margin-top: 1rem;
 	font-weight: bold;
+}
+input:focus:invalid {			
+	border: 2px solid red;
+}
+input:focus:valid {			
+		border: 2px solid green;
+}
 	

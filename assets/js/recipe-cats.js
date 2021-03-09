@@ -2,7 +2,7 @@ Vue.component('recipecats', {
 	props: ['results'],
 	template: `
 		<section>
-			<h2>Categories</h2>
+			<h2>Recipe Categories</h2>
 			<div class="" v-for="result in results">
 				<div class="card">
 					<div class="card-text">
