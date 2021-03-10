@@ -13,10 +13,7 @@ Vue.component('recipecats', {
 							<h4>{{ result.strCategory }}</h4>
 							<h5>Category: {{ result.strCategory }}</h5>
 							<p>{{ result.strCategoryDescription }} </p>
-							<form v-on:submit.prevent="getrecipe">
-								<input type="hidden" name="catid" v-model="result.idCategory" /> 
-								<button type="button" class="btn btn-outline-info btn-lg">See recipes in Category</button>
-							</form>
+							<a class="btn btn-outline-info" :href="'categories.html?catid=' + result.idCategory" role="button">See recipes in Category</a>
 						</div>
 					</div>
 				</div>

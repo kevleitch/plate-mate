@@ -13,10 +13,7 @@ Vue.component('recipesearchresults', {
 							<h5>Category: {{ result.strCategory }}</h5>
 							<h5 v-if="result.strTags" id="tags">Tags: {{ result.strTags }}</h5>
 							<h5 v-if="result.strArea" id="area">Area recipe is from: {{ result.strArea }}</h5>
-							<form v-on:submit.prevent="getrecipe">
-								<input type="hidden" name="recipeid" v-model="result.idMeal" /> 
-								<button type="button" class="btn btn-outline-info btn-lg">Get Recipe</button>
-							</form>
+							<a class="btn btn-outline-info" :href="'recipe.html?recipeid=' + result.idMeal" role="button">Get Recipe</a>
 						</div>
 					</div>
 				</div>
