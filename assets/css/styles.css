@@ -33,4 +33,6 @@ input:focus:invalid {
 input:focus:valid {			
 	border: 2px solid green;
 }
-	
+.footer {
+	clear: left;
+}

@@ -1,0 +1,14 @@
+.card-similar {
+	max-width: 22.3%;
+	float: left;
+	margin-right: 1rem;
+	margin-left: 1rem;
+	min-height: 400px;
+}
+@media (max-width:1080px) {
+	.card-similar {
+		float: none;
+		max-width: 100%;
+		width: 100%;
+	}
+}

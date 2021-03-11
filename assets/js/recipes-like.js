@@ -4,16 +4,10 @@ Vue.component('recipeslike', {
 		<section>
 			<h2>Similar Recipes</h2>
 			<div class="" v-for="result in results">
-				<div class="card">
-					<div class="card-text">
-						<div id="recipethumb">
-							<img :src="result.strMealThumb" />
-						</div>
-						<div id="recipedetails">
-							<h4>{{ result.strMeal }}</h4>
-							<a class="btn btn-outline-info" :href="'recipe.html?recipeid=' + result.idMeal" role="button">Get Recipe</a>
-						</div>
-					</div>
+				<div class="card card-similar">
+					<img :src="result.strMealThumb" />
+					<h5>{{ result.strMeal }}</h5>
+					<a class="btn btn-outline-info" :href="'recipe.html?recipeid=' + result.idMeal + '&cat=' + result.strCategory" role="button">Get Recipe</a></div>
 				</div>
 			</div>
 		</section>
