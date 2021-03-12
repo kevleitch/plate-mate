@@ -4,7 +4,7 @@ Vue.component('recipeslike', {
 		<section>
 			<h2>Similar Recipes</h2>
 			<div class="" v-for="result in results">
-				<div class="card card-similar">
+				<div class="card card-similar text-center">
 					<img :src="result.strMealThumb" />
 					<h5>{{ result.strMeal }}</h5>
 					<a class="btn btn-outline-info" :href="'recipe.html?recipeid=' + result.idMeal + '&cat=' + result.strCategory" role="button">Get Recipe</a></div>
