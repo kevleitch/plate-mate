@@ -10,6 +10,7 @@
 	<link rel="stylesheet" type="text/css" href="assets/css/styles.css" />
 	<link rel="stylesheet" type="text/css" href="assets/css/results.css" />
 	<link rel="stylesheet" type="text/css" href="assets/css/similar.css" />
+	<link rel="stylesheet" type="text/css" href="assets/css/external.css" />
 </head>
 <body>
 	<div id="recipesearch-app">
@@ -39,9 +40,16 @@
 			<recipeslike :results="results"></recipeslike>
 		</div>
 	</div>
+	
+	<div class="container container-main">		
+		<div class="container" id="external-app">
+			<externalrecipes :results="results"></externalrecipes>
+		</div>
+	</div>
+	
 	<div class="container container-main footer">
 		<div>
-			<p class="built-with text-center"><small>Built with <a href="https://vuejs.org/" target="_blank">Vue</a>, <a href="https://github.com/axios/axios" target="_blank">Axios</a> and <a href="https://getbootstrap.com/" target="_blank">Bootstrap</a>. API from <a href="https://www.themealdb.com/api.php" target="_blank">TheMealDB</a></small></p>
+			<p class="built-with text-center"><small>Built with <a href="https://vuejs.org/" target="_blank">Vue</a>, <a href="https://github.com/axios/axios" target="_blank">Axios</a> and <a href="https://getbootstrap.com/" target="_blank">Bootstrap</a>. API from <a href="https://www.themealdb.com/api.php" target="_blank">TheMealDB</a> and <a href="http://www.recipepuppy.com" target="_blank">TheRecipePuppy</a></small></p>
 		</div>
 	</div>
 	<script src="https://unpkg.com/vue@2.6.12/dist/vue.js"></script>
@@ -51,5 +59,6 @@
 	<script src="assets/js/recipe-search.js"></script>
 	<script src="assets/js/single-recipe.js"></script>
 	<script src="assets/js/recipes-like.js"></script>
+	<script src="assets/js/external-recipes.js"></script>
 </body>
 </html>

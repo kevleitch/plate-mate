@@ -1,25 +1,27 @@
-Vue.component('cats', {
+Vue.component('externalrecipes', {
 	props: ['results'],
 	template: `
-		<section> 
-			<h2>Category Recipes</h2>
+		<section style="clear: left;">
+			<h2>External Recipes</h2>
+			<h5>(Links to new site opening a new tab/window)</h5>
 			<div class="" v-for="result in results">
-				<div class="card card-similar text-center">
-					<img :src="result.strMealThumb" />
-					<h5>{{ result.strMeal }}</h5>
-					<a class="btn btn-outline-info" :href="'recipe.html?recipeid=' + result.idMeal" role="button">Get Recipe</a>
+				<div class="card card-external text-center">
+					<h5>{{ result.title }}</h5>
+					<a class="btn btn-outline-info" :href="result.href" target="_blank" role="button">Get Recipe</a></div>
 				</div>
 			</div>
 		</section>
 	`
 })
-const rcat = new Vue({
-	el: '#cats-app',
+
+const er = new Vue({
+	el: '#external-app',
 	data: {
 		results: [],
+		searchrecipe: ''
 	},
 	methods: {
-		recipecats:function() {
+		extrecipes:function() {
 			var getUrlParameter = function getUrlParameter(sParam) {
 				var sPageURL = window.location.search.substring(1),
 				sURLVariables = sPageURL.split('&'),
@@ -34,15 +36,15 @@ const rcat = new Vue({
 					}
 				}		
 			};
-			var cid = getUrlParameter('catid');
-			axios.get("https://www.themealdb.com/api/json/v1/1/filter.php?c="+cid)
+			var cid = getUrlParameter('cat');
+			axios.get("https://thingproxy.freeboard.io/fetch/http://www.recipepuppy.com/api?q="+cid)
 			.then(response => {
-				this.results = response.data.meals;
+				this.results = response.data.results;
 				console.log(response);
 			})
 		}
 	},
 	created: function(){
-        this.recipecats()
+        this.extrecipes()
     }
 });
