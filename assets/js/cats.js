@@ -2,7 +2,7 @@ Vue.component('cats', {
 	props: ['results'],
 	template: `
 		<section> 
-			<h2>Recipes</h2>
+	<h2>Category Recipes</h2>
 			<div class="" v-for="result in results">
 				<div class="card card-similar text-center">
 					<img :src="result.strMealThumb" />
@@ -13,7 +13,6 @@ Vue.component('cats', {
 		</section>
 	`
 })
-
 const rcat = new Vue({
 	el: '#cats-app',
 	data: {
