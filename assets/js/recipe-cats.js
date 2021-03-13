@@ -13,7 +13,7 @@ Vue.component('recipecats', {
 							<h4>{{ result.strCategory }}</h4>
 							<h5>Category: {{ result.strCategory }}</h5>
 							<p>{{ result.strCategoryDescription }} </p>
-							<a class="btn btn-outline-info" :href="'categories.html?catid=' + result.idCategory" role="button">See recipes in Category</a>
+							<a class="btn btn-outline-info" :href="'categories.html?catid=' + result.strCategory" role="button">See recipes in Category</a>
 						</div>
 					</div>
 				</div>
