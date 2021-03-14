@@ -35,4 +35,8 @@ input:focus:valid {
 }
 .footer {
 	clear: left;
+	background-color: #eee;
+	padding: 1rem;
+	padding-bottom: 0.1rem;
+	border-top: 1px solid #ccc;
 }
