@@ -1,8 +1,9 @@
 Vue.component('externalrecipes', {
 	props: ['results'],
 	template: `
-		<section style="clear:left;">
-			<h2>External Recipes (Links open in a new tab/window)</h2>
+		<section>
+			<h2>Similar External Recipes</h2>
+			<h5>(Links open in a new tab/window)</h5>
 			<div class="" v-for="result in results">
 				<div class="card card-similar card-external text-center">
 					<img :src="result.image_url" />

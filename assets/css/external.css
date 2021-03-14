@@ -1,3 +1,6 @@
+#external-app section {
+	clear: left;
+}
 .card-external {
 	width: 22.3%;
 	float: left;
