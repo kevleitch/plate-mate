@@ -16,6 +16,9 @@
 	 position: relative;
 	 top: 180px;
  }
+ .card-external a {
+	width: 92%;
+ }
 @media (max-width:1080px) {
 	.card-external {
 		float: none;
