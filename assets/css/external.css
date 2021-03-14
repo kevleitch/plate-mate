@@ -3,12 +3,26 @@
 	float: left;
 	margin-right: 1rem;
 	margin-left: 1rem;
-	min-height: 200px;
+	min-height: 340px;
+	position: relative;
 }
+.card-external img {
+    position: absolute;
+    width: 77%;
+    height: 50%;
+    object-fit: cover;
+ }
+ .card-external #meta {
+	 position: relative;
+	 top: 180px;
+ }
 @media (max-width:1080px) {
 	.card-external {
 		float: none;
 		width: 100%;
 		width: 100%;
+	}
+	.card-external img {
+		width: 86%;
 	}
 }

@@ -1,13 +1,15 @@
 Vue.component('externalrecipes', {
 	props: ['results'],
 	template: `
-		<section style="clear: left;">
-			<h2>External Recipes</h2>
-			<h5>(Links to new site opening a new tab/window)</h5>
+		<section style="clear:left;">
+			<h2>External Recipes (Links open in a new tab/window)</h2>
 			<div class="" v-for="result in results">
-				<div class="card card-external text-center">
-					<h5>{{ result.title }}</h5>
-					<a class="btn btn-outline-info" :href="result.href" target="_blank" role="button">Get Recipe</a></div>
+				<div class="card card-similar card-external text-center">
+					<img :src="result.image_url" />
+					<div id="meta" class="text-center">
+						<h5>{{ result.title }}</h5>
+						<a class="btn btn-outline-info" :href="result.source_url" role="button" target="_blank">Get Recipe</a>
+					</div>
 				</div>
 			</div>
 		</section>
@@ -37,9 +39,9 @@ const er = new Vue({
 				}		
 			};
 			var cid = getUrlParameter('cat');
-			axios.get("https://thingproxy.freeboard.io/fetch/http://www.recipepuppy.com/api?q="+cid)
+			axios.get("https://forkify-api.herokuapp.com/api/search?q="+cid)
 			.then(response => {
-				this.results = response.data.results;
+				this.results = response.data.recipes;
 				console.log(response);
 			})
 		}
