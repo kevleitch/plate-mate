@@ -4,11 +4,6 @@ Vue.component('singlerecipe', {
 		<section>
 			<div class="" v-for="result in results">
 				<div class="card">
-					<div id="bookmark">
-						<a href=""><img src="assets/img/bookmark.png" alt="Bookmark this recipe" /></a>
-						<a href=""><img src="assets/img/fb-icon.png" alt="Share on Facebook" /></a>
-						<a href=""><img src="assets/img/tw-icon.png" alt="Share on Twitter" /></a>
-					</div>
 					<div class="card-title">
 						<h3>{{ result.strMeal }}</h3>
 					</div>
