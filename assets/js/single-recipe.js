@@ -18,7 +18,7 @@ Vue.component('singlerecipe', {
 									<h4>Wine Pairing</h4>
 									<h5>{{ wresult.title }}</h5>
 									<img :src="wresult.imageUrl" />
-									<p>{{ wresult.description }}</p>
+									<p><small>{{ wresult.description }}</small></p>
 								</div>
 							</div>
 						</div>
