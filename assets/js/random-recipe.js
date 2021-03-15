@@ -5,11 +5,6 @@ Vue.component('randomrecipe', {
 			<p>Love food? Love your mates? Of course you do! Use PlateMate to decide on a meal then invite your mates - or maybe a special someone - over to help you eat it!</p>
 			<div class="" v-for="result in results">
 				<div class="card">
-					<div id="bookmark">
-						<a href=""><img src="assets/img/bookmark.png" alt="Bookmark this recipe" /></a>
-						<a href=""><img src="assets/img/fb-icon.png" alt="Share on Facebook" /></a>
-						<a href=""><img src="assets/img/tw-icon.png" alt="Share on Twitter" /></a>
-					</div>
 					<div class="card-title">
 						<h3>Random Recipe - {{ result.strMeal }}</h3>
 					</div>

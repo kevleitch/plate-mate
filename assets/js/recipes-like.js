@@ -38,6 +38,7 @@ const rl = new Vue({
 			};
 			var cid = getUrlParameter('cat');
 			axios.get("https://www.themealdb.com/api/json/v1/1/filter.php?c="+cid)
+			//axios.get("https://www.themealdb.com/api/json/v1/1/search.php?s="+cid)
 			.then(response => {
 				this.results = response.data.meals;
 				console.log(response);
