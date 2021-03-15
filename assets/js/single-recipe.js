@@ -1,5 +1,5 @@
 Vue.component('singlerecipe', {
-	props: ['results'],
+	props: ['results', 'wresults'],
 	template: `
 		<section>
 			<div class="" v-for="result in results">
@@ -12,6 +12,15 @@ Vue.component('singlerecipe', {
 							<img :src="result.strMealThumb" />
 							<h5>Category: {{ result.strCategory }}</h5>
 							<h5 v-if="result.strTags" id="tags">Tags: {{ result.strTags }}</h5>
+							<div id="winepairing">
+								<hr />
+								<div class="" v-for="wresult in wresults">
+									<h4>Wine Pairing</h4>
+									<h5>{{ wresult.title }}</h5>
+									<img :src="wresult.imageUrl" />
+									<p>{{ wresult.description }}</p>
+								</div>
+							</div>
 						</div>
 						<div id="recipedetails">
 							<h4>Ingredients</h4>
@@ -86,38 +95,46 @@ Vue.component('singlerecipe', {
 		</section>
 	`
 })
+var getUrlParameter = function getUrlParameter(sParam) {
+	var sPageURL = window.location.search.substring(1),
+	sURLVariables = sPageURL.split('&'),
+	sParameterName,
+	i;
+	for (i = 0; i < sURLVariables.length; i++) {
+		sParameterName = sURLVariables[i].split('=');
 
+		if (sParameterName[0] === sParam) {
+			return sParameterName[1] === undefined ? true : decodeURIComponent(sParameterName[1]);
+		}
+	}		
+};
 const sr = new Vue({
 	el: '#singlerecipe-app',
 	data: {
 		results: [],
+		wresults: [],
 		recipeid: ''
 	},
 	methods: {
 		getrecipe:function() {
-			var getUrlParameter = function getUrlParameter(sParam) {
-				var sPageURL = window.location.search.substring(1),
-				sURLVariables = sPageURL.split('&'),
-				sParameterName,
-				i;
-
-				for (i = 0; i < sURLVariables.length; i++) {
-					sParameterName = sURLVariables[i].split('=');
-
-					if (sParameterName[0] === sParam) {
-						return sParameterName[1] === undefined ? true : decodeURIComponent(sParameterName[1]);
-					}
-				}		
-			};
 			var rid = getUrlParameter('recipeid');
 			axios.get("https://www.themealdb.com/api/json/v1/1/lookup.php?i="+rid)
 			.then(response => {
 				this.results = response.data.meals;
 				console.log(response);
 			})
+		},
+		getwine:function() {
+			var wid = getUrlParameter('cat');
+			axios.get("https://api.spoonacular.com/food/wine/pairing?food=" + wid + "&apiKey=0f68abb4dee648439aa9f6622e499495")
+			.then(response => {
+				this.wresults = response.data.productMatches;
+				console.log(response);
+			})
 		}
 	},
 	created: function(){
-        this.getrecipe()
+        this.getrecipe(),
+		this.getwine()
     }
 });

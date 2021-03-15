@@ -12,6 +12,12 @@
 	padding: 5px;
 	border: 1px solid #eee;
 }
+#winepairing {
+	margin-top: 2rem;
+}
+#winepairing hr {
+	border-top: 1px dotted #F8F9FA;
+}
 #recipedetails {
 	margin-left: 4rem;
 	width: 50%;
