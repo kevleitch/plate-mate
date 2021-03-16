@@ -17,8 +17,7 @@ const rl = new Vue({
 	el: '#recipeslike-app',
 	data: {
 		results: [],
-		searchrecipe: '',
-		cat: getUrlParameter('cat')
+		searchrecipe: ''
 	},
 	methods: {
 		recipeslike:function() {
