@@ -13,12 +13,12 @@ Vue.component('recipeslike', {
 		</section>
 	`
 })
-
 const rl = new Vue({
 	el: '#recipeslike-app',
 	data: {
 		results: [],
-		searchrecipe: ''
+		searchrecipe: '',
+		cat: getUrlParameter('cat')
 	},
 	methods: {
 		recipeslike:function() {

@@ -19,6 +19,8 @@ Vue.component('singlerecipe', {
 									<h5>{{ wresult.title }}</h5>
 									<img :src="wresult.imageUrl" />
 									<p><small>{{ wresult.description }}</small></p>
+									<a target="_blank" class="btn btn-secondary btn-sm" :href="'https://www.wine-searcher.com/find/' + wresult.title + '/1/uk'" role="button">Buy Wine</a>
+									
 								</div>
 							</div>
 						</div>
