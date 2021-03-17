@@ -7,7 +7,7 @@ Vue.component('recipeslike', {
 				<div class="card card-similar text-center">
 					<img :src="result.strMealThumb" />
 					<h5>{{ result.strMeal }}</h5>
-					<a class="btn btn-outline-info" :href="'recipe.html?recipeid=' + result.idMeal + '&cat=' + result.strCategory" role="button">Get Recipe</a></div>
+					<a class="btn btn-outline-info" :href="'recipe.html?recipeid=' + result.idMeal" role="button">Get Recipe</a></div>
 				</div>
 			</div>
 		</section>
@@ -37,7 +37,6 @@ const rl = new Vue({
 			};
 			var cid = getUrlParameter('cat');
 			axios.get("https://www.themealdb.com/api/json/v1/1/filter.php?c="+cid)
-			//axios.get("https://www.themealdb.com/api/json/v1/1/search.php?s="+cid)
 			.then(response => {
 				this.results = response.data.meals;
 				console.log(response);

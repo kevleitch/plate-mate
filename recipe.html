@@ -11,6 +11,7 @@
 	<link rel="stylesheet" type="text/css" href="assets/css/results.css" />
 	<link rel="stylesheet" type="text/css" href="assets/css/similar.css" />
 	<link rel="stylesheet" type="text/css" href="assets/css/external.css" />
+	<link rel="stylesheet" type="text/css" href="https://printjs-4de6.kxcdn.com/print.min.css" />	
 </head>
 <body>
 	<div id="recipesearch-app">
@@ -32,7 +33,7 @@
 	</div>
 	<div class="container container-main">
 		<div class="container" id="singlerecipe-app">
-			<singlerecipe :results="results" :wresults="wresults"></singlerecipe>
+			<singlerecipe :results="results" :wresults="wresults" :checkeditems="checkeditems"></singlerecipe>
 		</div>
 	</div>
 	<div class="container container-main">		
@@ -54,7 +55,7 @@
 	</div>
 	<script src="https://unpkg.com/vue@2.6.12/dist/vue.js"></script>
 	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-	<script src="https://npmcdn.com/vue-router/dist/vue-router.js"></script>
+	<script src="https://printjs-4de6.kxcdn.com/print.min.js"></script>	
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 	<script src="assets/js/main-jquery.js"></script>
 	<script src="assets/js/recipe-search.js"></script>
