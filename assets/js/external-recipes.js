@@ -34,7 +34,7 @@ const er = new Vue({
 	el: '#external-app',
 	data: {
 		results: [],
-		searchrecipe: ''
+		searchrecipe: '',
 		cid: getUrlParameter('cid')
 	},
 	methods: {

@@ -13,16 +13,7 @@ Vue.component('recipeslike', {
 		</section>
 	`
 })
-const rl = new Vue({
-	el: '#recipeslike-app',
-	data: {
-		results: [],
-		searchrecipe: '',
-		cid: getUrlParameter('cid')
-	},
-	methods: {
-		recipeslike:function() {
-			var getUrlParameter = function getUrlParameter(sParam) {
+var getUrlParameter = function getUrlParameter(sParam) {
 				var sPageURL = window.location.search.substring(1),
 				sURLVariables = sPageURL.split('&'),
 				sParameterName,
@@ -36,6 +27,15 @@ const rl = new Vue({
 					}
 				}		
 			};
+const rl = new Vue({
+	el: '#recipeslike-app',
+	data: {
+		results: [],
+		searchrecipe: '',
+		cid: getUrlParameter('cid')
+	},
+	methods: {
+		recipeslike:function() {
 			var cid = getUrlParameter('cid');
 			axios.get("https://www.themealdb.com/api/json/v1/1/filter.php?c="+cid)
 			.then(response => {
