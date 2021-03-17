@@ -120,8 +120,13 @@ Vue.component('singlerecipe', {
 							<button type="button" class="btn btn-secondary btn-sm sl" onclick="printJS('printshoppinglist', 'html')">
 								Print Shopping List
 							</button>
-							<h4>Instructions</h4>
-							<p>{{ result.strInstructions }}</p>
+							<div id="printinstructions">
+								<h4>Instructions</h4>
+								<p>{{ result.strInstructions }}</p>
+							</div>
+							<button type="button" class="btn btn-secondary btn-sm sl" onclick="printJS('printinstructions', 'html')">
+								Print Instructions
+							</button>
 						</div>
 					</div>
 				</div>
