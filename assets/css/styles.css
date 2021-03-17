@@ -47,3 +47,6 @@ input:focus:valid {
 .sl {
 	margin-top: 1rem;
 }
+.icons {
+	cursor: pointer;
+}
