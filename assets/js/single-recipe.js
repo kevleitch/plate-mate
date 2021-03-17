@@ -27,13 +27,12 @@ Vue.component('singlerecipe', {
 						<div id="recipedetails">
 							<h4>Ingredients</h4>
 							<h5>Check the box to add selected ingredient to a shopping list</h5>
-							<span>Checked Items: {{ checkeditems }}</span>
 							<div id="printshoppinglist">
 								<h2>Shopping List</h2>
 								
 								<ul>
 								  <li v-for="item of checkeditems">
-									{{ item.checkeditems }}
+									{{ item }}
 								  </li>
 								</ul>
 							</div>
@@ -149,7 +148,7 @@ const sr = new Vue({
 		results: [],
 		wresults: [],
 		recipeid: '',
-		checkeditems: [],
+		checkeditems: []
 	},
 	methods: {
 		getrecipe:function() {
