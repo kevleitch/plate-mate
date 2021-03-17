@@ -16,7 +16,7 @@ Vue.component('randomrecipe', {
 						</div>
 						<div id="recipedetails">
 							<h4>Ingredients</h4>
-							<h5>Check the box to add selected ingredient to a shopping list</h5>
+							<h5>Check the boxes to add selected ingredients to a shopping list</h5>
 							<div id="printshoppinglist">
 								<h2>Shopping List</h2>
 								
@@ -114,7 +114,7 @@ Vue.component('randomrecipe', {
 								<h4>Instructions</h4>
 								<p>{{ result.strInstructions }}</p>
 							</div>
-							<button type="button" class="btn btn-secondary btn-sm sl" onclick="printJS('printinstructions', 'html')">
+							<button type="button" class="btn btn-secondary btn-sm" onclick="printJS('printinstructions', 'html')">
 								Print Instructions
 							</button>
 						</div>
