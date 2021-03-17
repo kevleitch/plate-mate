@@ -1,5 +1,5 @@
 Vue.component('singlerecipe', {
-	props: ['results', 'wresults', 'checkeditems'],
+	props: ['results', 'wresults', 'checkeditems', 'cid'],
 	template: `
 		<section>
 			<div class="" v-for="result in results">
@@ -152,7 +152,8 @@ const sr = new Vue({
 		results: [],
 		wresults: [],
 		recipeid: '',
-		checkeditems: []
+		checkeditems: [],
+		cid: getUrlParameter('cid')
 	},
 	methods: {
 		getrecipe:function() {
