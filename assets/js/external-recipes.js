@@ -1,5 +1,5 @@
 Vue.component('externalrecipes', {
-	props: ['results'],
+	props: ['results', 'cid'],
 	template: `
 		<section>
 			<h2>Similar External Recipes</h2>
@@ -16,16 +16,7 @@ Vue.component('externalrecipes', {
 		</section>
 	`
 })
-
-const er = new Vue({
-	el: '#external-app',
-	data: {
-		results: [],
-		searchrecipe: ''
-	},
-	methods: {
-		extrecipes:function() {
-			var getUrlParameter = function getUrlParameter(sParam) {
+var getUrlParameter = function getUrlParameter(sParam) {
 				var sPageURL = window.location.search.substring(1),
 				sURLVariables = sPageURL.split('&'),
 				sParameterName,
@@ -39,7 +30,16 @@ const er = new Vue({
 					}
 				}		
 			};
-			var cid = getUrlParameter('cat');
+const er = new Vue({
+	el: '#external-app',
+	data: {
+		results: [],
+		searchrecipe: ''
+		cid: getUrlParameter('cid')
+	},
+	methods: {
+		extrecipes:function() {
+			var cid = getUrlParameter('cid');
 			axios.get("https://forkify-api.herokuapp.com/api/search?q="+cid)
 			.then(response => {
 				this.results = response.data.recipes;

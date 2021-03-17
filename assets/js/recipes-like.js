@@ -1,5 +1,5 @@
 Vue.component('recipeslike', {
-	props: ['results'],
+	props: ['results', 'cid'],
 	template: `
 		<section>
 			<h2>Similar Recipes</h2>
@@ -7,7 +7,7 @@ Vue.component('recipeslike', {
 				<div class="card card-similar text-center">
 					<img :src="result.strMealThumb" />
 					<h5>{{ result.strMeal }}</h5>
-					<a class="btn btn-outline-info" :href="'recipe.html?recipeid=' + result.idMeal" role="button">Get Recipe</a></div>
+					<a class="btn btn-outline-info" :href="'recipe.html?recipeid=' + result.idMeal + '&cid=' + cid" role="button">Get Recipe</a></div>
 				</div>
 			</div>
 		</section>
@@ -17,7 +17,8 @@ const rl = new Vue({
 	el: '#recipeslike-app',
 	data: {
 		results: [],
-		searchrecipe: ''
+		searchrecipe: '',
+		cid: getUrlParameter('cid')
 	},
 	methods: {
 		recipeslike:function() {
@@ -35,7 +36,7 @@ const rl = new Vue({
 					}
 				}		
 			};
-			var cid = getUrlParameter('cat');
+			var cid = getUrlParameter('cid');
 			axios.get("https://www.themealdb.com/api/json/v1/1/filter.php?c="+cid)
 			.then(response => {
 				this.results = response.data.meals;

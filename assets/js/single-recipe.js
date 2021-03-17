@@ -28,8 +28,7 @@ Vue.component('singlerecipe', {
 							<h4>Ingredients</h4>
 							<h5>Check the boxes to add selected ingredients to a shopping list</h5>
 							<div id="printshoppinglist">
-								<h2>Shopping List</h2>
-								
+								<h2>Shopping List</h2>								
 								<ul>
 								  <li v-for="item of checkeditems">
 									{{ item }}
@@ -165,7 +164,7 @@ const sr = new Vue({
 			})
 		},
 		getwine:function() {
-			var wid = getUrlParameter('cat');
+			var wid = getUrlParameter('cid');
 			axios.get("https://api.spoonacular.com/food/wine/pairing?food=" + wid + "&apiKey=0f68abb4dee648439aa9f6622e499495")
 			.then(response => {
 				this.wresults = response.data.productMatches;

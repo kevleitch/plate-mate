@@ -1,5 +1,5 @@
 Vue.component('cats', {
-	props: ['results'],
+	props: ['results', 'cid'],
 	template: `
 		<section> 
 			<h2>Category Recipes</h2>
@@ -7,20 +7,13 @@ Vue.component('cats', {
 				<div class="card card-similar text-center">
 					<img :src="result.strMealThumb" />
 					<h5>{{ result.strMeal }}</h5>
-					<a class="btn btn-outline-info" :href="'recipe.html?recipeid=' + result.idMeal" role="button">Get Recipe</a>
+					<a class="btn btn-outline-info" :href="'recipe.html?recipeid=' + result.idMeal + '&cid=' + cid" role="button">Get Recipe</a>
 				</div>
 			</div>
 		</section>
 	`
 })
-const rcat = new Vue({
-	el: '#cats-app',
-	data: {
-		results: [],
-	},
-	methods: {
-		recipecats:function() {
-			var getUrlParameter = function getUrlParameter(sParam) {
+var getUrlParameter = function getUrlParameter(sParam) {
 				var sPageURL = window.location.search.substring(1),
 				sURLVariables = sPageURL.split('&'),
 				sParameterName,
@@ -34,6 +27,14 @@ const rcat = new Vue({
 					}
 				}		
 			};
+const rcat = new Vue({
+	el: '#cats-app',
+	data: {
+		results: [],
+		cid: getUrlParameter('catid')
+	},
+	methods: {
+		recipecats:function() {
 			var cid = getUrlParameter('catid');
 			axios.get("https://www.themealdb.com/api/json/v1/1/filter.php?c="+cid)
 			.then(response => {
