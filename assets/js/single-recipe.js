@@ -128,8 +128,8 @@ Vue.component('singlerecipe', {
 							</button>
 							<br />
 							<h5>Ask Your Mates To Join You On WhatApp or by Email</h5>
-							 <a onclick="return JSShare.go(this)" data-type="whatsapp"><img class="icons" src="assets/img/whatsapp-icon.png" alt="WhatsApp button" /></a>
-							 <a onclick="return JSShare.go(this)" data-type="email"><img class="icons" src="assets/img/email-icon.png" alt="Email button" /></a>
+							<a onclick="return JSShare.go(this)" data-type="whatsapp"><img class="icons" src="assets/img/whatsapp-icon.png" alt="WhatsApp button" /></a>
+							<a onclick="return JSShare.go(this)" data-type="email"><img class="icons" src="assets/img/email-icon.png" alt="Email button" /></a>
 						</div>
 					</div>
 				</div>
