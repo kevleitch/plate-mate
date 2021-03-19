@@ -1,0 +1,177 @@
+.swipe-card .image, .swipe-card .stars .active, .swipe-card .stars .inactive {
+	 background: center center no-repeat transparent;
+	 background-size: contain;
+}
+ html {
+	 box-sizing: border-box;
+}
+ body {
+	 min-width: 320px;
+	 font-family: "Nunito", sans-serif;
+	 font-weight: 700;
+	 color: #444;
+	 background: #f3f3f3;
+	 text-rendering: optimizeLegibility;
+	 -webkit-font-smoothing: antialiased;
+	 -moz-osx-font-smoothing: grayscale;
+	 -moz-font-feature-settings: "liga" on;
+}
+ *, *:before, *:after {
+	 margin: 0;
+	 padding: 0;
+	 box-sizing: inherit;
+}
+ #swipes-app {
+	 position: relative;
+	 width: 50vw;
+	 height: 50vh;
+}
+ .loading .loading-icon, .loading .loading-icon:before, .loading .loading-icon:after {
+	 position: absolute;
+	 left: 50%;
+	 top: 50%;
+	 margin-left: -62.5px;
+	 margin-top: -62.5px;
+}
+ .loading .loading-icon:before, .loading .loading-icon:after {
+	 width: 125px;
+	 height: 125px;
+	 border-radius: 50%;
+	 border: 4px solid #fff;
+}
+ .loading {
+	 z-index: 10;
+	 position: fixed;
+	 width: 100%;
+	 height: 100%;
+	 background: rgba(240, 164, 53, .5);
+}
+ .loading .loading-icon {
+	 width: 125px;
+	 height: 125px;
+}
+ .loading .loading-icon:before, .loading .loading-icon:after {
+	 content: "";
+	 display: block;
+}
+ .loading .loading-icon:before {
+	 z-index: 0;
+	 animation: 1s pulse infinite linear;
+}
+ .loading .loading-icon:after {
+	 z-index: 10;
+	 background: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/617753/loading-default.jpg") center center no-repeat #fff;
+	 background-size: cover;
+}
+ @keyframes pulse {
+	 0% {
+		 opacity: 0;
+		 transform: scale(0.8);
+	}
+	 50% {
+		 opacity: 1;
+	}
+	 100% {
+		 opacity: 0;
+		 transform: scale(1.5);
+	}
+}
+ .card-container {
+	 position: relative;
+	 top: 300px;
+	 margin: 0 auto;
+	 width: 420px;
+	 height: 570px;
+	 transform: translateY(-50%);
+}
+ .swipe-card {
+	 pointer-events: none;
+	 z-index: 0;
+	 opacity: 0;
+	 left: 0;
+	 top: 0;
+	 position: absolute;
+	 padding: 15px 15px 30px;
+	 width: 420px;
+	 height: 550px;
+	 border-radius: 8px;
+	 background: #fff;
+	 box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+	 transform: translateY(30px) scale(0.94);
+	 transform-origin: 50% 100%;
+	 will-change: transform, opacity;
+}
+ .swipe-card:nth-child(1) {
+	 opacity: 1;
+	 z-index: 3;
+	 transform: translateY(0px) scale(1);
+}
+ .swipe-card:nth-child(2) {
+	 opacity: 1;
+	 z-index: 2;
+	 transform: translateY(10px) scale(0.98);
+}
+ .swipe-card:nth-child(3) {
+	 opacity: 1;
+	 z-index: 1;
+	 transform: translateY(20px) scale(0.96);
+}
+ .swipe-card.current {
+	 pointer-events: auto;
+}
+ .swipe-card.animated {
+	 transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+ .swipe-card .image {
+	 margin: 0 auto 30px 0;
+	 width: 390px;
+	 height: 390px;
+}
+ .swipe-card .image .image-icon {
+	 position: relative;
+	 left: 50%;
+	 top: 50%;
+	 width: 200px;
+	 height: 200px;
+	 transform: translateX(-50%) translateY(-50%);
+	 background: center center no-repeat transparent;
+	 background-size: contain;
+}
+ .swipe-card .image .image-icon.match {
+	 background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/617753/icon-approve.svg");
+}
+ .swipe-card .image .image-icon.pass {
+	 background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/617753/icon-reject.svg");
+}
+ .swipe-card .name {
+	 margin: 0 auto 30px 0;
+	 display: block;
+	 font-size: 24px;
+	 line-height: 24px;
+	 text-align: center;
+	 text-transform: capitalize;
+}
+ .swipe-card .stars {
+	 margin: 0 auto;
+	 width: 216px;
+}
+ .swipe-card .stars:after {
+	 content: "";
+	 display: table;
+	 clear: both;
+}
+ .swipe-card .stars .active, .swipe-card .stars .inactive {
+	 float: left;
+	 margin-right: 24px;
+	 width: 24px;
+	 height: 24px;
+}
+ .swipe-card .stars .active:last-child, .swipe-card .stars .inactive:last-child {
+	 margin-right: 0;
+}
+ .swipe-card .stars .active {
+	 background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/617753/star-active.svg");
+}
+ .swipe-card .stars .inactive {
+	 background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/617753/star-inactive.svg");
+}

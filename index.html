@@ -9,12 +9,13 @@
 	<link href="https://fonts.googleapis.com/css2?family=Dosis&family=Merriweather&display=swap" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="assets/css/styles.css" />
 	<link rel="stylesheet" type="text/css" href="assets/css/results.css" />
+	<link rel="stylesheet" type="text/css" href="assets/css/swipes.css" />
 </head>
 <body>
 	<div id="recipesearch-app">
 		<nav class="navbar navbar-expand-lg">
 			<div class="container-fluid">
-				<a class="navbar-brand" href="#"><img src="assets/img/small-logo.png" alt="PlateMate logo" /></a>
+				<a class="navbar-brand" href="index.html"><img src="assets/img/small-logo.png" alt="PlateMate logo" /></a>
 				<div id="navbarSupportedContent">
 					<form class="d-flex" v-on:submit.prevent="recipesearch">
 						<input class="form-control me-2" v-model="searchrecipe" type="search" placeholder="Recipe, ingredient" required aria-label="Search">
@@ -26,6 +27,13 @@
 		<div class="container container-main">
 			<h1><img src="assets/img/logo.png" alt="PlateMate" /></h1>
 			<recipesearchresults :results="results"></recipesearchresults>
+		</div>
+	</div>
+	<div class="container container-main">		
+		<div class="container" id="swipes-app">
+			<div class="card">
+				<card></card>
+			</div>
 		</div>
 	</div>
 	<div class="container container-main">		
@@ -46,11 +54,13 @@
 	<script src="https://unpkg.com/vue@2.6.12/dist/vue.js"></script>
 	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 	<script src="https://printjs-4de6.kxcdn.com/print.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/interact.js/1.2.8/interact.min.js"></script>
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 	<script src="assets/js/main-jquery.js"></script>
 	<script src="assets/js/recipe-search.js"></script>
 	<script src="assets/js/random-recipe.js"></script>
 	<script src="assets/js/recipe-cats.js"></script>
 	<script src="assets/js/jsshare.js"></script>
+	<script src="assets/js/swipes.js"></script>
 </body>
 </html>
