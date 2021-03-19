@@ -101,6 +101,7 @@ const card = Vue.component('card', {
 				interact($el).unset();
 				this.animating = true;        
         const x = window.innerWidth + (window.innerWidth / 2) + $el.offsetWidth;
+		
         
         position.x = x;
 				position.rotation = maxRotation;
@@ -110,10 +111,11 @@ const card = Vue.component('card', {
 					position.x = -x;
 					position.rotation = -maxRotation;
 					icon.type = 'pass';
+				}else{						
+					window.location.href = 'recipe.html';
 				}
 
 				icon.opacity = 1;
-
 				setTimeout(() => this.showing = false, 200);
 			}
 		},
@@ -166,13 +168,15 @@ const app = new Vue({
 		},
 		setApproval(approval) {
       const { cards, getData } = this;
+	  
       
 			cards.data[cards.index].approved = approval;
+			
 			cards.index++;
-			window.location = 'recipe.html';
 
 			if (cards.index >= cards.data.length) {
 				getData();
+
 			}
 		}
 	},
