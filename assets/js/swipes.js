@@ -169,6 +169,7 @@ const app = new Vue({
       
 			cards.data[cards.index].approved = approval;
 			cards.index++;
+			window.location = 'recipe.html';
 
 			if (cards.index >= cards.data.length) {
 				getData();
