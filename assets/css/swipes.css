@@ -7,10 +7,6 @@
 }
  body {
 	 min-width: 320px;
-	 font-family: "Nunito", sans-serif;
-	 font-weight: 700;
-	 color: #444;
-	 background: #f3f3f3;
 	 text-rendering: optimizeLegibility;
 	 -webkit-font-smoothing: antialiased;
 	 -moz-osx-font-smoothing: grayscale;
