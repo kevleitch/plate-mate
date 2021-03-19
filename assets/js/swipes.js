@@ -17,7 +17,7 @@ const card = Vue.component('card', {
 					v-bind:style="{ opacity: icon.opacity }">
 				</div>
 			</div>
-			<h1 class="name">{{ fullName }}</h1>
+			<h1 class="name"><a href="recipe.html?">{{ fullName }}</a></h1>
 		</div>
 	`,
 	data: () => ({
@@ -124,6 +124,7 @@ const app = new Vue({
 	el: '#swipes-app',
 	template: `
 		<div id="app">
+			<h2>Swipe For A Random Recipe</h2>
 			<div class="card-container">
 				<card v-for="(card, index) in cards.data" :key="index"
 					v-bind:current="index === cards.index"
