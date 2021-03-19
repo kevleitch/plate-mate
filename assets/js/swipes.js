@@ -3,6 +3,7 @@ const card = Vue.component('card', {
 		current: { type: Boolean, required: true },
 		strMeal: { type: String, required: true },
 		strMealThumb: { type: String, required: false },
+		idMeal: {type: String, required: false},
 		rating: { type: Number, required: true },
 		approved: { type: Boolean },
 	},
@@ -17,7 +18,7 @@ const card = Vue.component('card', {
 					v-bind:style="{ opacity: icon.opacity }">
 				</div>
 			</div>
-			<h3 class="name">{{ strMeal }}</a></h3>
+			<h3 class="name">{{ strMeal }}</h3>
 		</div>
 	`,
 	data: () => ({
@@ -112,7 +113,8 @@ const card = Vue.component('card', {
 					position.rotation = -maxRotation;
 					icon.type = 'pass';
 				}else{						
-					window.location.href = 'recipe.html';
+					//window.location.href = "recipe.html?recipeid="+idMeal;
+					alert(card.idMeal);
 				}
 
 				icon.opacity = 1;
@@ -132,6 +134,7 @@ const app = new Vue({
 					v-bind:current="index === cards.index"
 					v-bind:strMeal="card.strMeal"
 					v-bind:strMealThumb="card.strMealThumb"
+					v-bind:idMeal="card.idMeal"
 					v-bind:rating="card.rating"
 					v-bind:approved="card.approved"
 					v-on:draggedThreshold="setApproval">
@@ -153,9 +156,10 @@ const app = new Vue({
 			fetch(`https://www.themealdb.com/api/json/v2/9973533/randomselection.php`)
 			.then(async (response) => {
 				const { meals } = await response.json();
-				const data = meals.map(({ strMeal, strMealThumb }) => ({
+				const data = meals.map(({ strMeal, strMealThumb, idMeal }) => ({
           strMeal: strMeal,
           strMealThumb: strMealThumb,
+		  idMeal: idMeal,
           rating: Math.floor(Math.random() * 5 + 1),
           approved: null,
         }));
