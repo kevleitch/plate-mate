@@ -2,7 +2,7 @@ const card = Vue.component('card', {
 	props: {
 		current: { type: Boolean, required: true },
 		strMeal: { type: String, required: true },
-		picture: { required: false },
+		strMealThumb: { type: String, required: false },
 		rating: { type: Number, required: true },
 		approved: { type: Boolean },
 	},
