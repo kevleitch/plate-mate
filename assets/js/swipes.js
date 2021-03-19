@@ -1,8 +1,8 @@
 const card = Vue.component('card', {
 	props: {
 		current: { type: Boolean, required: true },
-		fullName: { type: String, required: true },
-		picture: { type: String, required: false },
+		strMeal: { type: String, required: true },
+		picture: { required: false },
 		rating: { type: Number, required: true },
 		approved: { type: Boolean },
 	},
@@ -17,21 +17,21 @@ const card = Vue.component('card', {
 					v-bind:style="{ opacity: icon.opacity }">
 				</div>
 			</div>
-			<h3 class="name"><a href="recipe.html?">{{ fullName }}</a></h3>
+			<h3 class="name">{{ strMeal }}</a></h3>
 		</div>
 	`,
 	data: () => ({
     showing: true,
     maxStars: 5,
     animating: true,
-    threshold: window.innerWidth / 6, 
+    threshold: window.innerWidth / 20, 
     maxRotation: 20,
     position: { x: 0, y: 0, rotation: 0 },
     icon: { opacity: 0, type: null }
 	}),
 	computed: {
 		returnImageString() {
-			return `url(${this.picture})`;
+			return `url(${this.strMealThumb})`;
 		},
 		returnTransformString() {
       const { animating, approved, position: { x, y, rotation } } = this;
@@ -130,8 +130,8 @@ const app = new Vue({
 			<div class="card-container">
 				<card v-for="(card, index) in cards.data" :key="index"
 					v-bind:current="index === cards.index"
-					v-bind:fullName="card.name"
-					v-bind:picture="card.picture"
+					v-bind:strMeal="card.strMeal"
+					v-bind:strMealThumb="card.strMealThumb"
 					v-bind:rating="card.rating"
 					v-bind:approved="card.approved"
 					v-on:draggedThreshold="setApproval">
@@ -150,11 +150,12 @@ const app = new Vue({
       cards.data = null;
       this.isLoading = true;
 
-			fetch(`https://randomuser.me/api/?results=${cards.max}`).then(async (response) => {
-				const { results } = await response.json();
-				const data = results.map(({ name, picture }) => ({
-          name: `${name.first} ${name.last}`,
-          picture: picture.large,
+			fetch(`https://www.themealdb.com/api/json/v2/9973533/randomselection.php`)
+			.then(async (response) => {
+				const { meals } = await response.json();
+				const data = meals.map(({ strMeal, strMealThumb }) => ({
+          strMeal: strMeal,
+          strMealThumb: strMealThumb,
           rating: Math.floor(Math.random() * 5 + 1),
           approved: null,
         }));

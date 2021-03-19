@@ -37,7 +37,7 @@ const rl = new Vue({
 	methods: {
 		recipeslike:function() {
 			var cid = getUrlParameter('cid');
-			axios.get("https://www.themealdb.com/api/json/v1/1/filter.php?c="+cid)
+			axios.get("https://www.themealdb.com/api/json/v2/9973533/filter.php?c="+cid)
 			.then(response => {
 				this.results = response.data.meals;
 				console.log(response);

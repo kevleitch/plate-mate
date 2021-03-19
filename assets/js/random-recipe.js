@@ -132,7 +132,7 @@ const rr = new Vue({
 	},
 	methods: {
 		randomrec:function() {
-			axios.get("https://www.themealdb.com/api/json/v1/1/random.php")
+			axios.get("https://www.themealdb.com/api/json/v2/9973533/random.php")
 			.then(response => {
 				this.results = response.data.meals;
 				console.log(response);

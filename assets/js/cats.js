@@ -36,7 +36,8 @@ const rcat = new Vue({
 	methods: {
 		recipecats:function() {
 			var cid = getUrlParameter('catid');
-			axios.get("https://www.themealdb.com/api/json/v1/1/filter.php?c="+cid)
+			axios.get("https://www.themealdb.com/api/json/v2/9973533/filter.php?c="+cid)
+			/latest.php
 			.then(response => {
 				this.results = response.data.meals;
 				console.log(response);

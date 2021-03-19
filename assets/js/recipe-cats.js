@@ -29,7 +29,7 @@ const rc = new Vue({
 	},
 	methods: {
 		recipecategories:function() {
-			axios.get("https://www.themealdb.com/api/json/v1/1/categories.php")
+			axios.get("https://www.themealdb.com/api/json/v2/9973533/categories.php")
 			.then(response => {
 				this.results = response.data.categories;
 				console.log(response);

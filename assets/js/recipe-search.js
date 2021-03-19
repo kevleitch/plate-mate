@@ -30,7 +30,7 @@ const vm = new Vue({
 	},
 	methods: {
 		recipesearch:function() {
-			axios.get("https://www.themealdb.com/api/json/v1/1/search.php?s="+this.searchrecipe)
+			axios.get("https://www.themealdb.com/api/json/v2/9973533/search.php?s="+this.searchrecipe)
 			.then(response => {
 				this.results = response.data.meals;
 				console.log(response);

@@ -162,7 +162,7 @@ const sr = new Vue({
 	methods: {
 		getrecipe:function() {
 			var rid = getUrlParameter('recipeid');
-			axios.get("https://www.themealdb.com/api/json/v1/1/lookup.php?i="+rid)
+			axios.get("https://www.themealdb.com/api/json/v2/9973533/lookup.php?i="+rid)
 			.then(response => {
 				this.results = response.data.meals;
 				console.log(response);
