@@ -17,7 +17,7 @@ const card = Vue.component('card', {
 					v-bind:style="{ opacity: icon.opacity }">
 				</div>
 			</div>
-			<h1 class="name"><a href="recipe.html?">{{ fullName }}</a></h1>
+			<h3 class="name"><a href="recipe.html?">{{ fullName }}</a></h3>
 		</div>
 	`,
 	data: () => ({

@@ -12,16 +12,6 @@
 	 -moz-osx-font-smoothing: grayscale;
 	 -moz-font-feature-settings: "liga" on;
 }
-#app {
-	background-color: #fff;
-    padding-top: 2rem;
-    padding-bottom: 2rem;
-    border: 1px solid rgba(0,0,0,.125);
-    border-radius: .25rem;
-	max-width: 98%;
-    margin-left: 0.9rem;
-	padding-left: 2rem;
-}
  *, *:before, *:after {
 	 margin: 0;
 	 padding: 0;
@@ -63,7 +53,7 @@
 	 padding: 15px 15px 30px;
 	 width: 420px;
 	 height: 490px;
-	 border-radius: 8px;
+	 border-radius: 3px;
 	 background: #fff;
 	 box-shadow: 0 0 10px rgba(0, 0, 0, .1);
 	 transform: translateY(30px) scale(0.94);
@@ -93,7 +83,6 @@
 }
  .swipe-card .image {
 	 margin: 0 auto 30px 0;
-	 width: 390px;
 	 height: 390px;
 }
  .swipe-card .image .image-icon {
@@ -144,10 +133,13 @@
  .swipe-card .stars .inactive {
 	 background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/617753/star-inactive.svg");
 }
-h1 a {
+#app h2 {
+	text-align: center;
+}
+h3.name a {
 	color: #198754;
 	text-decoration: none;
 	padding-bottom: 0.2rem;
 	border-bottom: 1px dotted #198754;
-	
+	font-size: 1.2rem;
 }
