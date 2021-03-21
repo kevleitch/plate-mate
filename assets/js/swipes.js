@@ -4,6 +4,7 @@ const card = Vue.component('card', {
 		strMeal: { type: String, required: true },
 		strMealThumb: { type: String, required: false },
 		idMeal: {type: String, required: false},
+		strCategory: {type: String, required: false},
 		rating: { type: Number, required: true },
 		approved: { type: Boolean },
 	},
@@ -18,7 +19,7 @@ const card = Vue.component('card', {
 					v-bind:style="{ opacity: icon.opacity }">
 				</div>
 			</div>
-			<h3 class="name">{{ strMeal }}</h3>
+			<h3 class="name"><a :href="'recipe.html?recipeid=' + idMeal + '&cid=' + strCategory">{{ strMeal }}</a></h3>
 		</div>
 	`,
 	data: () => ({
@@ -112,9 +113,6 @@ const card = Vue.component('card', {
 					position.x = -x;
 					position.rotation = -maxRotation;
 					icon.type = 'pass';
-				}else{						
-					//window.location.href = "recipe.html?recipeid="+idMeal;
-					alert(card.idMeal);
 				}
 
 				icon.opacity = 1;
@@ -128,13 +126,15 @@ const app = new Vue({
 	el: '#swipes-app',
 	template: `
 		<div id="app">
-			<h2>Swipe For A Random Recipe</h2>
+			<h2>Choose A Random Recipe</h2>
+			<h5>Swipe through cards (left or right) then click on your selected recipe</h5>
 			<div class="card-container">
 				<card v-for="(card, index) in cards.data" :key="index"
 					v-bind:current="index === cards.index"
 					v-bind:strMeal="card.strMeal"
 					v-bind:strMealThumb="card.strMealThumb"
 					v-bind:idMeal="card.idMeal"
+					v-bind:strCategory="card.strCategory"
 					v-bind:rating="card.rating"
 					v-bind:approved="card.approved"
 					v-on:draggedThreshold="setApproval">
@@ -156,10 +156,11 @@ const app = new Vue({
 			fetch(`https://www.themealdb.com/api/json/v2/9973533/randomselection.php`)
 			.then(async (response) => {
 				const { meals } = await response.json();
-				const data = meals.map(({ strMeal, strMealThumb, idMeal }) => ({
+				const data = meals.map(({ strMeal, strMealThumb, idMeal, strCategory }) => ({
           strMeal: strMeal,
           strMealThumb: strMealThumb,
 		  idMeal: idMeal,
+		  strCategory: strCategory,
           rating: Math.floor(Math.random() * 5 + 1),
           approved: null,
         }));

@@ -52,7 +52,7 @@
 	 position: absolute;
 	 padding: 15px 15px 30px;
 	 width: 420px;
-	 height: 490px;
+	 height: 550px;
 	 border-radius: 3px;
 	 background: #fff;
 	 box-shadow: 0 0 10px rgba(0, 0, 0, .1);
@@ -133,7 +133,8 @@
  .swipe-card .stars .inactive {
 	 background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/617753/star-inactive.svg");
 }
-#app h2 {
+#app h2,
+#app h5 {
 	text-align: center;
 }
 h3.name a {
