@@ -14,10 +14,12 @@ const card = Vue.component('card', {
 			v-bind:style="{ transform: returnTransformString }">
 			<div class="image"
 				v-bind:style="{ backgroundImage: returnImageString }">
+				<!--
 				<div class="image-icon"
 					v-bind:class="icon.type"
 					v-bind:style="{ opacity: icon.opacity }">
 				</div>
+				-->
 			</div>
 			<h3 class="name"><a :href="'recipe.html?recipeid=' + idMeal + '&cid=' + strCategory">{{ strMeal }}</a></h3>
 		</div>
@@ -107,12 +109,12 @@ const card = Vue.component('card', {
         
         position.x = x;
 				position.rotation = maxRotation;
-				icon.type = 'match';
+				//icon.type = 'match';
 
         if (!approved) {
 					position.x = -x;
 					position.rotation = -maxRotation;
-					icon.type = 'pass';
+					//icon.type = 'pass';
 				}
 
 				icon.opacity = 1;
