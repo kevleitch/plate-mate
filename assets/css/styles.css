@@ -58,6 +58,9 @@ input:focus:valid {
 	max-width: 100%;
 	float: right;
 }
+.g-signin2 {
+	margin-right: 1rem;
+}
 @media (max-width:400px) {
 	h1.logo img {
 		display: none;
