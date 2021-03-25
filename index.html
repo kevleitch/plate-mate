@@ -19,8 +19,10 @@
 			<div class="container-fluid">
 				<a class="navbar-brand" href="index.html"><img src="assets/img/small-logo.png" alt="PlateMate logo" /></a>
 				<div id="navbarSupportedContent">
+					<a href="#" class="logout-link" onclick="signOut();">Sign out</a>
 					<form class="d-flex" v-on:submit.prevent="recipesearch">
 						<div class="g-signin2" data-onsuccess="onSignIn"></div>
+						<div class="avatar"><img id="img-avatar" src="" /></div>
 						<input class="form-control me-2" v-model="searchrecipe" type="search" placeholder="Recipe, ingredient" required aria-label="Search">
 						<button class="btn btn-outline-success" id="searchsub" type="submit">Search</button>
 					</form>
