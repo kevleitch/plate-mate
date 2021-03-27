@@ -110,11 +110,12 @@ a.logout-link {
 	border-right: 10px solid transparent;  
 	border-bottom: 10px solid #eee;
 }
-.dropdown:hover 
-.dropdown-content {
+.dropdown:hover .dropdown-content {
 	display: block;
 }
-
+.hidden {
+	display:none;
+}
 /* Change the background color of the dropdown button when the dropdown content is shown */
 
 @media (max-width:400px) {
