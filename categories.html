@@ -4,6 +4,7 @@
 	<meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Plate Mate</title>
+	<meta name="google-signin-client_id" content="512202368051-5jq1l6e6btf1q194o1p4lsalabufrotf.apps.googleusercontent.com">
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
 	<link rel="preconnect" href="https://fonts.gstatic.com">
 	<link href="https://fonts.googleapis.com/css2?family=Dosis&family=Merriweather&display=swap" rel="stylesheet">
@@ -17,9 +18,17 @@
 		<nav class="navbar navbar-expand-lg">
 			<div class="container-fluid">
 				<a class="navbar-brand" href="index.html"><img src="assets/img/small-logo.png" alt="PlateMate logo" /></a>
-				<a href="index.html" type="button" class="btn btn-success btn-lg">Tinder Mode</a>
 				<div id="navbarSupportedContent">
 					<form class="d-flex" v-on:submit.prevent="recipesearch">
+						<div class="g-signin2" data-onsuccess="onSignIn"></div>
+						<div class="avatar dropdown">
+							<img id="img-avatar" src="" />
+							<div class="dropdown-content">
+								<span class="arrow-up"></span>
+								<a href="#" onclick="signOut();">Sign Out</a>
+								<a href="#">Settings</a>
+							 </div>
+						</div>
 						<input class="form-control me-2" v-model="searchrecipe" type="search" placeholder="Recipe, ingredient" required aria-label="Search">
 						<button class="btn btn-outline-success" id="searchsub" type="submit">Search</button>
 					</form>
@@ -44,9 +53,11 @@
 	<script src="https://unpkg.com/vue@2.6.12/dist/vue.js"></script>
 	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://apis.google.com/js/platform.js" async defer></script>
 	<script src="assets/js/main-jquery.js"></script>
 	<script src="assets/js/recipe-search.js"></script>
 	<script src="assets/js/cats.js"></script>
 	<script src="assets/js/jsshare.js"></script>
+	<script src="assets/js/google.js"></script>
 </body>
 </html>

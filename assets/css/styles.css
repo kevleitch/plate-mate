@@ -74,6 +74,49 @@ a.logout-link {
 	padding: 2px;
 	border: 1px solid #eee;
 }
+.dropdown-content {
+	display: none;
+	position: absolute;
+	top: 45px;
+	left: -30px;
+	background-color: #eee;
+	min-width: 100px;
+	z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+	color: #757575;
+	padding: 8px 10px;
+	text-decoration: none;
+	display: block;
+	font-size: 12px;
+	text-align: center;
+	border-bottom: 1px solid #fff;
+}
+.dropdown-content a:hover {
+	color: #000;
+}
+.dropdown-content a:last-child {
+	border-bottom: 0;
+}
+.arrow-up {
+	position: absolute;
+	top: -8px;
+	left: 40px;
+	width: 0; 
+	height: 0; 
+	border-left: 10px solid transparent;
+	border-right: 10px solid transparent;  
+	border-bottom: 10px solid #eee;
+}
+.dropdown:hover 
+.dropdown-content {
+	display: block;
+}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+
 @media (max-width:400px) {
 	h1.logo img {
 		display: none;

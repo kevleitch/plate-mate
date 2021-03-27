@@ -3,7 +3,6 @@ function onSignIn(googleUser) {
   console.log('ID: ' + profile.getId());
   console.log('Email: ' + profile.getEmail());
   document.getElementById('img-avatar').src = profile.getImageUrl();
-  document.getElementById('img-avatar').setAttribute('title', 'Signed in as: ' + profile.getName());
   var id_token = googleUser.getAuthResponse().id_token;
 }
 function signOut() {

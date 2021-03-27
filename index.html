@@ -19,10 +19,16 @@
 			<div class="container-fluid">
 				<a class="navbar-brand" href="index.html"><img src="assets/img/small-logo.png" alt="PlateMate logo" /></a>
 				<div id="navbarSupportedContent">
-					<a href="#" class="logout-link" onclick="signOut();">Sign out</a>
 					<form class="d-flex" v-on:submit.prevent="recipesearch">
 						<div class="g-signin2" data-onsuccess="onSignIn"></div>
-						<div class="avatar"><img id="img-avatar" src="" /></div>
+						<div class="avatar dropdown">
+							<img id="img-avatar" src="" />
+							<div class="dropdown-content">
+								<span class="arrow-up"></span>
+								<a href="#" onclick="signOut();">Sign Out</a>
+								<a href="#">Settings</a>
+							 </div>
+						</div>
 						<input class="form-control me-2" v-model="searchrecipe" type="search" placeholder="Recipe, ingredient" required aria-label="Search">
 						<button class="btn btn-outline-success" id="searchsub" type="submit">Search</button>
 					</form>
@@ -41,13 +47,6 @@
 			</div>
 		</div>
 	</div>
-	<!--
-	<div class="container container-main">		
-		<div class="container" id="randomrecipe-app">
-			<randomrecipe :results="results" :checkeditems="checkeditems"></randomrecipe>
-		</div>
-	</div>
-	-->
 	<div class="container container-main">		
 		<div class="container" id="recipecats-app">
 			<recipecats :results="results"></recipecats>
@@ -66,7 +65,6 @@
 	<script src="https://apis.google.com/js/platform.js" async defer></script>
 	<script src="assets/js/main-jquery.js"></script>
 	<script src="assets/js/recipe-search.js"></script>
-	<script src="assets/js/random-recipe.js"></script>
 	<script src="assets/js/recipe-cats.js"></script>
 	<script src="assets/js/jsshare.js"></script>
 	<script src="assets/js/swipes.js"></script>
