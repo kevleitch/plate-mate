@@ -83,8 +83,6 @@ a.logout-link {
 	min-width: 100px;
 	z-index: 1;
 }
-
-/* Links inside the dropdown */
 .dropdown-content a {
 	color: #757575;
 	padding: 8px 10px;
@@ -113,11 +111,6 @@ a.logout-link {
 .dropdown:hover .dropdown-content {
 	display: block;
 }
-.hidden {
-	display:none;
-}
-/* Change the background color of the dropdown button when the dropdown content is shown */
-
 @media (max-width:400px) {
 	h1.logo img {
 		display: none;
