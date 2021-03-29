@@ -74,6 +74,12 @@ a.logout-link {
 	padding: 2px;
 	border: 1px solid #eee;
 }
+.hide {
+	display: none;
+}
+.show {
+	display: block;
+}
 .dropdown-content {
 	display: none;
 	position: absolute;

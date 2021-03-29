@@ -1,5 +1,5 @@
 $(document).ready(function(){
-	$('#searchsub').click(function() {
-		$('#randomrecipe-app').hide();
+	$('.toggle-show-hide').click(function() {
+		
 	})
 });

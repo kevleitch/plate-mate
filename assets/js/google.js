@@ -1,15 +1,21 @@
 function onSignIn(googleUser) {
   var profile = googleUser.getBasicProfile();
-  console.log('ID: ' + profile.getId());
-  console.log('Email: ' + profile.getEmail());
+  var id = profile.getId();
+  var em = profile.getEmail();
+  var name = profile.getName();
   document.getElementById('img-avatar').src = profile.getImageUrl();
-  var id_token = googleUser.getAuthResponse().id_token;
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+	if (this.readyState == 4 && this.status == 200) {
+      alert(this.responseText);
+    }
+  };
+  xhttp.open("GET", "./assets/inc/profile.php?id="+id+"&e="+em+"&n="+name, true);
+  xhttp.send();
 }
 function signOut() {
     var auth2 = gapi.auth2.getAuthInstance();
     auth2.signOut().then(function () {
-		console.log('User signed out.');
 		document.getElementById('img-avatar').src = './assets/img/avatar.png';
-		document.getElementById('img-avatar').setAttribute('title', 'Logged out');
     });
 }
