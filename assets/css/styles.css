@@ -131,6 +131,9 @@ a.logout-link {
 	overflow-x: hidden;
 	border-top: 2px solid #ccc;
 }
+#sidebar hr {
+	background-color: #999;
+}
 @media (max-width:400px) {
 	h1.logo img {
 		display: none;
