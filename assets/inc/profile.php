@@ -12,10 +12,11 @@
 		if (mysqli_query($mysqli, $sql)) {
             echo "New record created successfully";
         } else {
-            echo "Error: " . $sql . "" . mysqli_error($conn);
+            echo "Error: " . $sql . "" . mysqli_error($mysqli);
         }
 	} else {
 		echo "already exists";
 	}
+	
 	$mysqli->close();
 ?>

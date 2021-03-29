@@ -7,11 +7,11 @@ function onSignIn(googleUser) {
   var xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
 	if (this.readyState == 4 && this.status == 200) {
-      alert(this.responseText);
+      //alert(this.responseText);
     }
   };
   xhttp.open("GET", "./assets/inc/profile.php?id="+id+"&e="+em+"&n="+name, true);
-  xhttp.send();
+  xhttp.send();  
 }
 function signOut() {
     var auth2 = gapi.auth2.getAuthInstance();
