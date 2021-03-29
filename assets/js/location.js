@@ -1,13 +1,9 @@
 Vue.component('location', {
 	props: ['results'],
 	template: `
-		<section>
-			<div class="">
-				<div class="card">
-					{{ results.city }}
-				</div>
-			</div>
-		</section>
+		<div id="my-location">
+			My Location: <strong>{{ results.city }}</strong>
+		</div>
 	`
 })
 

@@ -14,6 +14,13 @@
 	<link rel="icon" type="image/png" href="assets/img/favicon.png"/>
 </head>
 <body>
+	<div id="sidebar">		
+		<div class="container" id="location-app">
+			<div class="">
+				<location :results="results"></location>
+			</div>
+		</div>
+	</div>
 	<div id="recipesearch-app">
 		<nav class="navbar navbar-expand-lg">
 			<div class="container-fluid">
@@ -40,14 +47,7 @@
 			<h1 class="logo"><img src="assets/img/logo.png" alt="PlateMate" /></h1>
 			<recipesearchresults :results="results"></recipesearchresults>
 		</div>
-	</div>
-	<div class="container container-main">		
-		<div class="container" id="location-app">
-			<div class="card">
-				<location :results="results"></location>
-			</div>
-		</div>
-	</div>
+	</div
 	<div class="container container-main">		
 		<div class="container" id="swipes-app">
 			<div class="card">
