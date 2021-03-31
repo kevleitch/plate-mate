@@ -21,7 +21,7 @@ const card = Vue.component('card', {
 				</div>
 				-->
 			</div>
-			<h3 class="name"><a :href="'recipe.html?recipeid=' + idMeal + '&cid=' + strCategory">{{ strMeal }}</a></h3>
+			<h3 class="name"><a :href="'recipe.php?recipeid=' + idMeal + '&cid=' + strCategory">{{ strMeal }}</a></h3>
 		</div>
 	`,
 	data: () => ({

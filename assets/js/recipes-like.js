@@ -7,7 +7,7 @@ Vue.component('recipeslike', {
 				<div class="card card-similar text-center">
 					<img :src="result.strMealThumb" />
 					<h5>{{ result.strMeal }}</h5>
-					<a class="btn btn-outline-info" :href="'recipe.html?recipeid=' + result.idMeal + '&cid=' + cid" role="button">Get Recipe</a></div>
+					<a class="btn btn-outline-info" :href="'recipe.php?recipeid=' + result.idMeal + '&cid=' + cid" role="button">Get Recipe</a></div>
 				</div>
 			</div>
 		</section>

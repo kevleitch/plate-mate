@@ -13,7 +13,7 @@ Vue.component('recipesearchresults', {
 							<h5>Category: {{ result.strCategory }}</h5>
 							<h5 v-if="result.strTags" id="tags">Tags: {{ result.strTags }}</h5>
 							<h5 v-if="result.strArea" id="area">Area recipe is from: {{ result.strArea }}</h5>
-							<a class="btn btn-outline-info" :href="'recipe.html?recipeid=' + result.idMeal + '&cid=' + result.strCategory" role="button">Get Recipe</a>
+							<a class="btn btn-outline-info" :href="'recipe.php?recipeid=' + result.idMeal + '&cid=' + result.strCategory" role="button">Get Recipe</a>
 						</div>
 					</div>
 				</div>

@@ -3,14 +3,15 @@ function onSignIn(googleUser) {
   var id = profile.getId();
   var em = profile.getEmail();
   var name = profile.getName();
+  var pic = profile.getImageUrl();
   document.getElementById('img-avatar').src = profile.getImageUrl();
   var xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
 	if (this.readyState == 4 && this.status == 200) {
-      //alert(this.responseText);
+      document.getElementById('confirm-login').style.display = 'block';
     }
   };
-  xhttp.open("GET", "./assets/inc/profile.php?id="+id+"&e="+em+"&n="+name, true);
+  xhttp.open("GET", "./assets/inc/profile.php?id="+id+"&e="+em+"&n="+name+"&p="+pic, true);
   xhttp.send();  
 }
 function signOut() {
