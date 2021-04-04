@@ -26,7 +26,7 @@
 	<div id="recipesearch-app">
 		<nav class="navbar navbar-expand-lg">
 			<div class="container-fluid">
-				<a class="navbar-brand" href="index.html"><img src="assets/img/small-logo.png" alt="PlateMate logo" /></a>
+				<a class="navbar-brand" href="index.php"><img src="assets/img/small-logo.png" alt="PlateMate logo" /></a>
 				<div id="navbarSupportedContent">
 					<form class="d-flex" v-on:submit.prevent="recipesearch">
 						<div class="g-signin2" data-onsuccess="onSignIn"></div>

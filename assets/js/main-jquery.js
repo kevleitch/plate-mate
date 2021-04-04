@@ -1,5 +1,4 @@
 $(document).ready(function(){
-	$('.toggle-show-hide').click(function() {
-		
-	})
+	var cn = $('#cityname').text();
+	//alert(cn);
 });
