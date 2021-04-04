@@ -1,6 +1,5 @@
 <?php
-	session_start();
-	echo "sess is " . $_SESSION['gid'];
+	require_once("assets/inc/sessions.php");
 ?>
 <!doctype html>
 <html lang="en">
@@ -27,12 +26,12 @@
 	<div id="recipesearch-app">
 		<nav class="navbar navbar-expand-lg">
 			<div class="container-fluid">
-				<a class="navbar-brand" href="index.html"><img src="assets/img/small-logo.png" alt="PlateMate logo" /></a>
+				<a class="navbar-brand" href="index.php"><img src="assets/img/small-logo.png" alt="PlateMate logo" /></a>
 				<div id="navbarSupportedContent">
 					<form class="d-flex" v-on:submit.prevent="recipesearch">
-						<div class="g-signin2" data-onsuccess="onSignIn"></div>
+						<a class="g-signin2" data-onsuccess="onSignIn"></a>
 						<div id="av" class="avatar dropdown">
-							<img id="img-avatar" src="assets/img/avatar.png" />
+							<img id="img-avatar" src="<?php echo $picpath; ?>" />
 							<div class="dropdown-content">
 								<span class="arrow-up"></span>
 								<a href="#" onclick="signOut();">Sign Out</a>
@@ -50,7 +49,7 @@
 			<h1 class="logo"><img src="assets/img/logo.png" alt="PlateMate" /></h1>
 			<recipesearchresults :results="results"></recipesearchresults>
 		</div>
-	</div
+	</div>
 	<div class="container container-main">		
 		<div class="container" id="swipes-app">
 			<div class="card">
@@ -68,9 +67,6 @@
 			<p class="built-with text-center"><small>Built with <a href="https://vuejs.org/" target="_blank">Vue</a>, <a href="https://github.com/axios/axios" target="_blank">Axios</a> and <a href="https://getbootstrap.com/" target="_blank">Bootstrap</a>. API's from <a href="https://www.themealdb.com/api.php" target="_blank">TheMealDB</a>, <a href="https://forkify-api.herokuapp.com/" target="_blank">Forkify</a> and <a href="https://spoonacular.com/food-api/" target="_blank">Spoonacular</a></small></p>
 		</div>
 	</div>
-	<div id="confirm-login" style="background-color: red; width: 400px;height: 200px; display: none;">
-		<button onClick="window.location.href=window.location.href">Refresh Page</button>
-	</div>
 	<script src="https://unpkg.com/vue@2.6.12/dist/vue.js"></script>
 	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 	<script src="https://printjs-4de6.kxcdn.com/print.min.js"></script>
@@ -82,7 +78,14 @@
 	<script src="assets/js/recipe-cats.js"></script>
 	<script src="assets/js/jsshare.js"></script>
 	<script src="assets/js/swipes.js"></script>
+	<?php
+		if(!isset($_SESSION['gid'])) {
+	?>
 	<script src="assets/js/google.js"></script>
+	<?php
+		}
+	?>
+	<script src="assets/js/google-signout.js"></script>
 	<script src="assets/js/location.js"></script>
 </body>
 </html>

@@ -1,5 +1,7 @@
 <?php
 
+	session_start();
+
 	$id = $_GET["id"];
 	$email = $_GET["e"];
 	$name = $_GET["n"];
@@ -11,6 +13,7 @@
 	
 	if($result->num_rows == 0) {
 		$sql = "INSERT INTO user_tbl (googleid, email, fullname, pic, loc) VALUES ('$id', '$email', '$name', '$pic', '')";
+		
 		if (mysqli_query($mysqli, $sql)) {
             echo "New record created successfully";
         } else {
@@ -20,9 +23,11 @@
 		echo "already exists";
 	}
 	
-	$mysqli->close();
-	
-	session_start();	
+	$mysqli->close();	
+		
 	$_SESSION['gid'] = $id;
+	$_SESSION['email'] = $email;
+	$_SESSION['name'] = $name;
+	$_SESSION['pic'] = $pic;
 	
 ?>

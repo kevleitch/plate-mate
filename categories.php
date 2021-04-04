@@ -1,5 +1,5 @@
 <?php
-	session_start();
+	require_once("assets/inc/sessions.php");
 ?>
 <!doctype html>
 <html lang="en">
@@ -31,10 +31,10 @@
 					<form class="d-flex" v-on:submit.prevent="recipesearch">
 						<div class="g-signin2" data-onsuccess="onSignIn"></div>
 						<div class="avatar dropdown">
-							<img id="img-avatar" src="assets/img/avatar.png" />
+							<img id="img-avatar" src="<?php echo $picpath; ?>" />
 							<div class="dropdown-content">
 								<span class="arrow-up"></span>
-								<!--<a href="#" onclick="signOut();">Sign Out</a>-->
+								<a href="#" onclick="signOut();">Sign Out</a>
 								<a href="#">Settings</a>
 								<a href="#">My Account</a>
 							 </div>
@@ -68,7 +68,14 @@
 	<script src="assets/js/recipe-search.js"></script>
 	<script src="assets/js/cats.js"></script>
 	<script src="assets/js/jsshare.js"></script>
+	<?php
+		if(!isset($_SESSION['gid'])) {
+	?>
 	<script src="assets/js/google.js"></script>
+	<?php
+		}
+	?>
+	<script src="assets/js/google-signout.js"></script>
 	<script src="assets/js/location.js"></script>
 </body>
 </html>
