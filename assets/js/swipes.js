@@ -21,7 +21,7 @@ const card = Vue.component('card', {
 				</div>
 				-->
 			</div>
-			<h3 class="name"><a :href="'recipe.php?recipeid=' + idMeal + '&cid=' + strCategory">{{ strMeal }}</a></h3>
+			<h3 class="name">{{ strMeal }}</h3>
 		</div>
 	`,
 	data: () => ({
@@ -129,7 +129,7 @@ const app = new Vue({
 	template: `
 		<div id="app">
 			<h2>Choose A Random Recipe</h2>
-			<h5>Swipe through cards (left or right) then click on your selected recipe</h5>
+			<h5>Swipe Right To Select A Recipe</h5>
 			<div class="card-container">
 				<card v-for="(card, index) in cards.data" :key="index"
 					v-bind:current="index === cards.index"
@@ -175,18 +175,23 @@ const app = new Vue({
 			});
 		},
 		setApproval(approval) {
-      const { cards, getData } = this;
-	  
-      
-			cards.data[cards.index].approved = approval;
-			
-			cards.index++;
+  const { cards, getData } = this;
 
-			if (cards.index >= cards.data.length) {
-				getData();
+  const targetCard = cards.data[cards.index];
 
-			}
-		}
+  if (approval) {
+    const { idMeal, strCategory } = targetCard;
+    window.location = `recipe.php?recipeid=${idMeal}&cid=${strCategory}`;
+    return;
+  }
+
+  targetCard.approved = approval;
+  cards.index++;
+
+  if (cards.index >= cards.data.length) {
+    getData();
+  }
+}
 	},
 	mounted() {
 		this.getData();

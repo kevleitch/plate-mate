@@ -18,4 +18,6 @@
 		echo "Record not updated: " . $sql . "" . mysqli_error($mysqli);
 	}
 	
+	$mysqli->close();
+	
 ?>

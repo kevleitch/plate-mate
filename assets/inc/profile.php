@@ -19,6 +19,7 @@
         } else {
             echo "Error: " . $sql . "" . mysqli_error($mysqli);
         }
+		
 	} else {
 		echo "already exists";
 	}
