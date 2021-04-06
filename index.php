@@ -22,6 +22,12 @@
 			<location :results="results"></location>
 			<hr />
 		</div>
+		<div class="container" id="friends-list">
+			<h5>My Friends</h5>
+			<?php
+				require_once("assets/inc/friends-list.php");
+			?>
+		</div>
 	</div>
 	<div id="recipesearch-app">
 		<nav class="navbar navbar-expand-lg">

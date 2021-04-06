@@ -121,7 +121,7 @@ a.logout-link {
 	position: absolute;
 	right: 0;
 	top: 4rem;
-	width: 10%;
+	width: 15%;
 	height: 100%;
 	background-color: #fff;
 	box-shadow: -10px 0px 10px 1px #eee;
@@ -133,6 +133,20 @@ a.logout-link {
 }
 #sidebar hr {
 	background-color: #999;
+}
+#sidebar #friends-list ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+#sidebar #friends-list ul li {
+	padding: 12px 6px;
+	margin-bottom: 2px;
+	border-bottom: 1px dotted #218B5A;
+}
+#sidebar #friends-list ul li img {
+	padding: 2px;
+	border: 1px solid #eee;
 }
 @media (max-width:400px) {
 	h1.logo img {
