@@ -6,6 +6,7 @@ Vue.component('singlerecipe', {
 				<div class="card">
 					<div class="card-title">
 						<h3>{{ result.strMeal }}</h3>
+						<a id="bookmark-recipe" @click="bookmarkrecipe(result.strMeal,result.idMeal,result.strCategory)" title="Bookmark this recipe" href="#"><img src="assets/img/bookmark.png" alt="Bookmark this recipe" /></a>
 					</div>
 					<div class="card-text">
 						<div id="recipethumb">
@@ -175,7 +176,20 @@ Vue.component('singlerecipe', {
 				</div>
 			</div>
 		</section>
-	`
+	`,
+	methods: {
+		bookmarkrecipe: function(rn,rid,rc) {
+			//alert(rn + " " + rid + " " + rc);
+			var xhttp = new XMLHttpRequest();
+			xhttp.onreadystatechange = function() {
+				if (this.readyState == 4 && this.status == 200) {
+					alert(xhttp.responseText);
+				}
+			};
+			xhttp.open("GET", "./assets/inc/bookmark-recipe.php?rn="+rn+"&rid="+rid+"&rc="+rc, true);
+			xhttp.send();
+		}
+	}
 })
 var getUrlParameter = function getUrlParameter(sParam) {
 	var sPageURL = window.location.search.substring(1),

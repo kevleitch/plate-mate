@@ -147,6 +147,13 @@ a.logout-link {
 #sidebar #friends-list ul li img {
 	padding: 2px;
 	border: 1px solid #eee;
+	box-shadow: 0 2px 4px 0 rgb(0 0 0 / 25%);
+	margin-right: 0.5rem;
+}
+a#bookmark-recipe {
+	position: absolute;
+    top: 1rem;
+    right: 1rem;
 }
 @media (max-width:400px) {
 	h1.logo img {
