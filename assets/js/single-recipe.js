@@ -179,7 +179,6 @@ Vue.component('singlerecipe', {
 	`,
 	methods: {
 		bookmarkrecipe: function(rn,rid,rc) {
-			//alert(rn + " " + rid + " " + rc);
 			var xhttp = new XMLHttpRequest();
 			xhttp.onreadystatechange = function() {
 				if (this.readyState == 4 && this.status == 200) {

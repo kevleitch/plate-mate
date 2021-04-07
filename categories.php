@@ -28,6 +28,12 @@
 				require_once("assets/inc/friends-list.php");
 			?>
 		</div>
+		<div class="container" id="bookmarks-list">
+			<h5>My Bookmarks</h5>
+			<?php
+				require_once("assets/inc/bookmarks-list.php");
+			?>
+		</div>
 	</div>
 	<div id="recipesearch-app">
 		<nav class="navbar navbar-expand-lg">

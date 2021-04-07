@@ -134,15 +134,30 @@ a.logout-link {
 #sidebar hr {
 	background-color: #999;
 }
-#sidebar #friends-list ul {
+#sidebar #friends-list ul,
+#sidebar #bookmarks-list ul {
 	list-style-type: none;
 	margin: 0;
 	padding: 0;
 }
-#sidebar #friends-list ul li {
+#sidebar #friends-list ul li,
+#sidebar #bookmarks-list ul li {
 	padding: 12px 6px;
 	margin-bottom: 2px;
-	border-bottom: 1px dotted #218B5A;
+}
+#sidebar #bookmarks-list ul li a {
+	display: block;
+}
+#sidebar #bookmarks-list ul > li:nth-of-type(odd) {
+    background-color: #F8F9FA;
+}
+#sidebar #bookmarks-list ul li a {
+	color: #000;
+	text-decoration: none;
+}
+#sidebar #bookmarks-list ul li a:hover {
+	color: #000;
+	text-decoration: underline;
 }
 #sidebar #friends-list ul li img {
 	padding: 2px;

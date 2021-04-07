@@ -31,5 +31,5 @@ foreach ($friendArr as $fa) {
 	}		
 }
 				
-$mysqli->close();
+//$mysqli->close();
 ?>

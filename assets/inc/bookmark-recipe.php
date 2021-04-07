@@ -15,12 +15,12 @@
 	if($result->num_rows == 0) {	
 		$sql = "INSERT INTO savedrecipies_tbl (googleid, recipename, recipeid, categoryid) VALUES ('$gid', '$rn', '$rid', '$rc')";
 		if (mysqli_query($mysqli, $sql)) {
-			echo "New bookmark saved";
+			echo "Recipe successfully bookmarked";
 		} else {
 			echo "Error saving bookmark: " . $sql . "" . mysqli_error($mysqli);
 		}
 	}else {
-		echo "You have already saved this recipie as a Bookmark";
+		echo "You have already saved this recipe as a Bookmark";
 	}
 	
 	$mysqli->close();	
