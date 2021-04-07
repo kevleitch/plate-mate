@@ -10,7 +10,7 @@ if($bmresult->num_rows == 0) {
 }else{
 	echo "<ul>";
 	while($bmrow = $bmresult->fetch_assoc()) {
-		echo "<li><a href='recipe.php?recipeid=" . $bmrow['recipeid'] . "&cid=" . $bmrow['categoryid'] . "'>" . $bmrow['recipename'] . "</a></li>";
+		echo "<li><a href='recipe.php?recipeid=" . $bmrow['recipeid'] . "&cid=" . $bmrow['categoryid'] . "'>" . $bmrow['recipename'] . "</a> <a onclick='removebookmark(" . $bmrow['recipeid'] . ")' title='Remove Bookmark' href='#'><img src='assets/img/remove-icon.png' alt='Remove this bookmark' /></a></li>";
 	}
 	echo "</ul>";
 }

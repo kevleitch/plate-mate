@@ -182,7 +182,8 @@ Vue.component('singlerecipe', {
 			var xhttp = new XMLHttpRequest();
 			xhttp.onreadystatechange = function() {
 				if (this.readyState == 4 && this.status == 200) {
-					alert(xhttp.responseText);
+					//alert(xhttp.responseText);
+					if(!alert(xhttp.responseText)){window.location.reload();}
 				}
 			};
 			xhttp.open("GET", "./assets/inc/bookmark-recipe.php?rn="+rn+"&rid="+rid+"&rc="+rc, true);

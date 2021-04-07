@@ -130,6 +130,7 @@ a.logout-link {
 	position: fixed;
 	overflow-x: hidden;
 	border-top: 2px solid #ccc;
+	font-family: 'Dosis', sans-serif;
 }
 #sidebar hr {
 	background-color: #999;
@@ -145,8 +146,8 @@ a.logout-link {
 	padding: 12px 6px;
 	margin-bottom: 2px;
 }
-#sidebar #bookmarks-list ul li a {
-	display: block;
+#sidebar #bookmarks-list ul li a img {
+	float: right;
 }
 #sidebar #bookmarks-list ul > li:nth-of-type(odd) {
     background-color: #F8F9FA;
@@ -169,6 +170,9 @@ a#bookmark-recipe {
 	position: absolute;
     top: 1rem;
     right: 1rem;
+}
+a.g-signin2 {
+	text-decoration: none;
 }
 @media (max-width:400px) {
 	h1.logo img {

@@ -30,6 +30,7 @@
 				require_once("assets/inc/friends-list.php");
 			?>
 		</div>
+		<hr />
 		<div class="container" id="bookmarks-list">
 			<h5>My Bookmarks</h5>
 			<?php
@@ -106,5 +107,6 @@
 	?>
 	<script src="assets/js/google-signout.js"></script>
 	<script src="assets/js/location.js"></script>
+	<script src="assets/js/remove-bookmark.js"></script>
 </body>
 </html>
