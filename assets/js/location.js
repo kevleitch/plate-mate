@@ -18,13 +18,15 @@ const loc = new Vue({
 			.then(response => {
 				this.results = response.data;
 				var cn = response.data.city;
+				var lat = response.data.latitude;
+				var lon = response.data.longitude;
 				var xhttp = new XMLHttpRequest();
 				xhttp.onreadystatechange = function() {
 					if (this.readyState == 4 && this.status == 200) {
-					  console.log(xhttp.responseText);
+						console.log(xhttp.responseText);
 					}
 				};
-				xhttp.open("GET", "./assets/inc/location.php?loc="+cn, true);
+				xhttp.open("GET", "./assets/inc/location.php?loc="+cn+"&lat="+lat+"&lon="+lon, true);
 				xhttp.send();
 			})
 		}

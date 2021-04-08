@@ -3,20 +3,26 @@ session_start();
 
 if(isset($_SESSION['gid'])){ 
 	$gid = $_SESSION['gid'];
-	//echo $gid;
 }
 if(isset($_SESSION['email'])){ 
 	$email = $_SESSION['email'];
-	//echo $email;
 }
 if(isset($_SESSION['name'])){ 
 	$name = $_SESSION['name'];
-	//echo $name;
 }
 if(isset($_SESSION['pic'])){ 
 	$pic = $_SESSION['pic'];
-	//echo "pic: " . $pic;
 }
+if(isset($_SESSION['loc'])){ 
+	$loc = $_SESSION['loc'];
+}
+If(isset($_SESSION['latitude'])){
+	$latitude = $_SESSION['latitude'];
+}
+If(isset($_SESSION['longitude'])){
+	$longitude = $_SESSION['longitude'];
+}
+	
 if(isset($pic)) {
 	$picpath = $pic;
 }else{

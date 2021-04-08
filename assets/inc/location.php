@@ -3,6 +3,8 @@
 	session_start();
 	$gid = $_SESSION['gid'];
 	$loc = $_GET["loc"];
+	$lat = $_GET["lat"];
+	$lon = $_GET["lon"];
 	
 	require_once("db.php");
 	
@@ -10,7 +12,7 @@
 		die("Connection failed: " . mysqli_connect_error());
 	}
 	
-	$sql = "UPDATE user_tbl SET loc='$loc' WHERE googleid='$gid'";
+	$sql = "UPDATE user_tbl SET loc='$loc',lat='$lat',longt='$lon' WHERE googleid='$gid'";
 	
 	if (mysqli_query($mysqli, $sql)) {
 		echo "Record updated successfully";
