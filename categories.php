@@ -45,12 +45,14 @@
 						<div class="g-signin2" data-onsuccess="onSignIn"></div>
 						<div class="avatar dropdown">
 							<img id="img-avatar" src="<?php echo $picpath; ?>" />
+							<!--
 							<div class="dropdown-content">
 								<span class="arrow-up"></span>
 								<a href="#" onclick="signOut();">Sign Out</a>
 								<a href="#">Settings</a>
 								<a href="#">My Account</a>
 							 </div>
+							 -->
 						</div>
 						<input class="form-control me-2" v-model="searchrecipe" type="search" placeholder="Recipe, ingredient" required aria-label="Search">
 						<button class="btn btn-outline-success" id="searchsub" type="submit">Search</button>

@@ -146,6 +146,9 @@ a.logout-link {
 	padding: 12px 6px;
 	margin-bottom: 2px;
 }
+#sidebar a.directions-link {
+	color: #000 !important;
+}
 #sidebar #bookmarks-list ul li a img {
 	float: right;
 }

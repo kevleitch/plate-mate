@@ -3,6 +3,7 @@
 	session_start();
 	$gid = $_SESSION['gid'];
 	$loc = $_GET["loc"];
+	$_SESSION['uloc'] = $loc;
 	$lat = $_GET["lat"];
 	$lon = $_GET["lon"];
 	

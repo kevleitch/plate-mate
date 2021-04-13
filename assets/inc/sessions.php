@@ -13,16 +13,15 @@ if(isset($_SESSION['name'])){
 if(isset($_SESSION['pic'])){ 
 	$pic = $_SESSION['pic'];
 }
-if(isset($_SESSION['loc'])){ 
-	$loc = $_SESSION['loc'];
+if(isset($_SESSION['uloc'])){ 
+	$loc = $_SESSION['uloc'];
 }
 If(isset($_SESSION['latitude'])){
 	$latitude = $_SESSION['latitude'];
 }
 If(isset($_SESSION['longitude'])){
 	$longitude = $_SESSION['longitude'];
-}
-	
+}	
 if(isset($pic)) {
 	$picpath = $pic;
 }else{

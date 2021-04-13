@@ -1,12 +1,26 @@
 <?php
 $gid = $_SESSION['gid'];	
-$latitude = $_SESSION['latitude'];
-$longitude = $_SESSION['longitude'];
+$loc = $_SESSION['uloc'];
 	
-require_once("assets/inc/db.php");
+require_once("db.php");
+
+if(!isset($_SESSION['latitude'])) {
+	$latlong = $mysqli->query("SELECT lat, longt FROM user_tbl WHERE googleid = '$gid'");
+					
+	if($latlong->num_rows == 0) {
+		echo "There's been an error";		
+	}else{
+		while($llrow = $latlong->fetch_assoc()) {
+			$latitude = $llrow["lat"];	
+			$longitude = $llrow["longt"];
+			$_SESSION['latitude'] = $llrow["lat"];
+			$_SESSION['longitude'] = $llrow["longt"];
+		}
+	}
+}
 				
 $friendArr = [];
-$result = $mysqli->query("SELECT friend_id FROM friends_tbl WHERE user_id = '$gid'");
+$result = $mysqli->query("SELECT friend_id FROM friends_tbl WHERE user_id = '$gid' AND friend_status='1'");
 				
 if($result->num_rows == 0) {
 	echo "You have no friends yet <img height='20' src='./assets/img/sad-smilie.png' alt='sad smilie' />";		
@@ -48,7 +62,7 @@ foreach ($friendArr as $fa) {
 	}else{
 		echo "<ul>";
 		while($nrow = $newresult->fetch_assoc()) {
-			echo "<li><img height='30' src='" . $nrow['pic']. "' alt='' /> " . $nrow['fullname'] . ", from <strong>" . $nrow['loc'] . "</strong><br />Approx " . round(distance($latitude,$longitude,$nrow['lat'],$nrow['longt'], 'M'), 0) . " miles from you.</li>";
+			echo "<li><img height='30' src='" . $nrow['pic']. "' alt='' /> " . $nrow['fullname'] . ", from <strong>" . $nrow['loc'] . "</strong><br />Approx " . round(distance($latitude,$longitude,$nrow['lat'],$nrow['longt'], 'M'), 0) . " miles from you. <a class='directions-link' title='Opens in a new tab' target='_blank' href='https://www.google.com/maps/dir/" . $nrow['loc'] . "/" . $loc . "/'>Directions</a></li>";
 		}
 		echo "</ul>";
 	}		
