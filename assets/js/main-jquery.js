@@ -1,4 +1,9 @@
 $(document).ready(function(){
-	var cn = $('#cityname').text();
-	//alert(cn);
+	$(".closer").click(function(){
+	  $(".friends-panel").hide();
+	});
+
+	$(".opener").click(function(){
+	  $(".friends-panel").show();
+	});
 });

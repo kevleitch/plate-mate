@@ -135,16 +135,18 @@ a.logout-link {
 #sidebar hr {
 	background-color: #999;
 }
-#sidebar #friends-list ul,
+
+#friends-list ul,
 #sidebar #bookmarks-list ul {
 	list-style-type: none;
 	margin: 0;
 	padding: 0;
 }
-#sidebar #friends-list ul li,
+#friends-list ul li,
 #sidebar #bookmarks-list ul li {
 	padding: 12px 6px;
 	margin-bottom: 2px;
+	font-size: 0.85rem;
 }
 #sidebar a.directions-link {
 	color: #000 !important;
@@ -163,12 +165,50 @@ a.logout-link {
 	color: #000;
 	text-decoration: underline;
 }
-#sidebar #friends-list ul li img {
+#friends-list ul li img {
 	padding: 2px;
 	border: 1px solid #eee;
 	box-shadow: 0 2px 4px 0 rgb(0 0 0 / 25%);
 	margin-right: 0.5rem;
 	float: left;
+}
+.friends-panel {
+	position: absolute;
+	top: 4rem;
+	padding: 0;
+	margin-left:-25%;
+	left:50%;
+	-webkit-box-shadow: 0px 0px 10px 2px #ccc; 
+	box-shadow: 0px 0px 10px 2px #ccc;
+	display:none;
+}
+.friends-panel h2 {
+	padding-top: 0.7rem;
+}
+.friends-panel a.closer {
+	margin-top: 1rem;
+    width: 30px;
+    height: 30px;
+    line-height: 26px;
+    border-radius: 50%;
+    font-size: 20px;
+    color: #fff;
+    text-align: center;
+    background: #ccc;
+    text-decoration: none;
+    position: absolute;
+    right: 1rem;
+    top: 0.5rem;
+}
+.friends-panel a.btn-secondary {
+	color: #fff !important;
+	margin-top: 0.3rem;
+}
+.friends-panel #friends-list ul li {
+	border-bottom: 1px solid #eee;
+}
+.friends-panel #friends-list .search-cell {
+	border-right: 1px solid #eee;
 }
 a#bookmark-recipe {
 	position: absolute;

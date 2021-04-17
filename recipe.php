@@ -25,9 +25,9 @@
 			<hr />
 		</div>
 		<div class="container" id="friends-list">
-			<h5>My Friends</h5>
+			<a type="button" class="btn btn-secondary btn-sm opener">Manage Friends</a>
 			<?php
-				require_once("assets/inc/friends-list.php");
+				//require_once("assets/inc/friends-list.php");
 			?>
 		</div>
 		<hr />
@@ -89,6 +89,9 @@
 			<p class="built-with text-center"><small>Built with <a href="https://vuejs.org/" target="_blank">Vue</a>, <a href="https://github.com/axios/axios" target="_blank">Axios</a> and <a href="https://getbootstrap.com/" target="_blank">Bootstrap</a>. API's from <a href="https://www.themealdb.com/api.php" target="_blank">TheMealDB</a>, <a href="https://forkify-api.herokuapp.com/" target="_blank">Forkify</a> and <a href="https://spoonacular.com/food-api/" target="_blank">Spoonacular</a></small></p>
 		</div>
 	</div>
+	<?php
+		require_once('assets/inc/manage-friends.php');
+	?>
 	<script src="https://unpkg.com/vue@2.6.12/dist/vue.js"></script>
 	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 	<script src="https://printjs-4de6.kxcdn.com/print.min.js"></script>	
@@ -110,5 +113,7 @@
 	<script src="assets/js/google-signout.js"></script>
 	<script src="assets/js/location.js"></script>
 	<script src="assets/js/remove-bookmark.js"></script>
+	<script src="assets/js/remove-friend.js"></script>
+	<script src="assets/js/block-friend.js"></script>
 </body>
 </html>

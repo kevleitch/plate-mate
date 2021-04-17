@@ -4,7 +4,6 @@ $loc = $_SESSION['uloc'];
 	
 require_once("db.php");
 
-if(!isset($_SESSION['latitude'])) {
 	$latlong = $mysqli->query("SELECT lat, longt FROM user_tbl WHERE googleid = '$gid'");
 					
 	if($latlong->num_rows == 0) {
@@ -17,7 +16,6 @@ if(!isset($_SESSION['latitude'])) {
 			$_SESSION['longitude'] = $llrow["longt"];
 		}
 	}
-}
 				
 $friendArr = [];
 $result = $mysqli->query("SELECT friend_id FROM friends_tbl WHERE user_id = '$gid' AND friend_status='1'");
@@ -62,7 +60,7 @@ foreach ($friendArr as $fa) {
 	}else{
 		echo "<ul>";
 		while($nrow = $newresult->fetch_assoc()) {
-			echo "<li><img height='30' src='" . $nrow['pic']. "' alt='' /> " . $nrow['fullname'] . ", from <strong>" . $nrow['loc'] . "</strong><br />Approx " . round(distance($latitude,$longitude,$nrow['lat'],$nrow['longt'], 'M'), 0) . " miles from you. <a class='directions-link' title='Opens in a new tab' target='_blank' href='https://www.google.com/maps/dir/" . $nrow['loc'] . "/" . $loc . "/'>Directions</a></li>";
+			echo "<li><img height='50' src='" . $nrow['pic']. "' alt='' /> <strong>" . $nrow['fullname'] . "</strong> " . $nrow['loc'] . ", " . round(distance($latitude,$longitude,$nrow['lat'],$nrow['longt'], 'M'), 0) . " miles away. <a class='directions-link' title='Opens in a new tab' target='_blank' href='https://www.google.com/maps/dir/" . $nrow['loc'] . "/" . $loc . "/'>Directions</a><br /><a class='btn btn-secondary btn-sm' onclick='friendid(" . $fa . ")' href='#' role='button'>Unfriend</a> <a onclick='blockid(" . $fa . ")'class='btn btn-secondary btn-sm' href='#' role='button'>Unfriend &amp; Block</a></li>";
 		}
 		echo "</ul>";
 	}		

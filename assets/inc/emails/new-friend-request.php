@@ -1,6 +1,6 @@
 <?php
 $to = 'kevleitch@gmail.com'; 
-$from = 'kevleitch@gmail.com'; 
+$from = 'no.reply@platemate.me'; 
 $fromName = 'Kevin Leitch'; 
  
 $subject = "New Friend Request!"; 
