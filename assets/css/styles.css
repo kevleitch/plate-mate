@@ -210,6 +210,9 @@ a.logout-link {
 .friends-panel #friends-list .search-cell {
 	border-right: 1px solid #eee;
 }
+.friends-panel #friends-list .request-cell {
+    border-left: 1px solid #eee;
+}
 a#bookmark-recipe {
 	position: absolute;
     top: 1rem;
@@ -217,6 +220,9 @@ a#bookmark-recipe {
 }
 a.g-signin2 {
 	text-decoration: none;
+}
+.add-friend {
+	margin-top: 0.7rem;
 }
 @media (max-width:400px) {
 	h1.logo img {

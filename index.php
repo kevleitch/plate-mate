@@ -108,5 +108,6 @@
 	<script src="assets/js/remove-bookmark.js"></script>
 	<script src="assets/js/remove-friend.js"></script>
 	<script src="assets/js/block-friend.js"></script>
+	<script src="assets/js/find-friends.js"></script>
 </body>
 </html>
